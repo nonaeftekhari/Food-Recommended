@@ -4,10 +4,17 @@ from .models import *
 class restSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rest
-        fields = ['id', 'name', 'zipcode', 'rating']
-
+        fields = ['id', 'restName', 'zipcode', 'restRating', 'website', 'phone', 'restPrice']
+        #need to still ad image and reviews
 
 class itemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        fields = ['id', 'name', 'cost', 'rating']
+        fields = ['id', 'itemName', 'itemPrice', 'itemRating', 'description', 'restId']
+
+
+
+class userSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'userEmail', 'password', 'name']

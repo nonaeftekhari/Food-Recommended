@@ -11,3 +11,7 @@ class restView(viewsets.ModelViewSet):
 class itemView(viewsets.ModelViewSet):
     queryset = Item.objects.all()
     serializer_class = itemSerializer
+
+class userView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = userSerializer
