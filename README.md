@@ -9,8 +9,11 @@ of getting the user to finding their desired restaurant.
 # Requirements
   1) Download Python
   2) Using Git Bash:
-     Use the command - pip install django 
-                     - pip install djangorestframework
+      Use the commands: 
+     
+     - pip install django 
+                     
+     - pip install djangorestframework
   
   Downloading Python and the libraries above give you the necessary frameworks to run a REST API.
   
