@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+body { margin: 0 auto;
+	  background-color: rgb(114, 159, 243);
+	 }
+
+.column {
+  float: left;
+  width: 20.33%;
+  padding: 8px;
+}
+
+/* Create two equal columns that floats next to each other */
+.column1 {
+      float: left;
+      width: 50%;
+      padding: 6px;
+      height: 500px; 
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 60px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5 {
+	display: none
+}
+img {
+	vertical-align: middle;
+
+}
+/* Slideshow container */
+.slideshow-container {
+	max-width: 700px;
+	position: relative;
+	margin:0 auto 25px;
+}
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+	background-color: #f1f1f1;
+	color: black;
+}
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+ @-webkit-keyframes fade {
+ from {
+opacity: .4
+}
+to {
+	opacity: 1
+}
+}
+ @keyframes fade {
+ from {
+opacity: .4
+}
+to {
+	opacity: 1
+}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+.prev, .next, .text {
+	font-size: 11px
+}
+}
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+	background-color: #717171;
+}
+.image {
+	height:100px;
+}
+.img1 {
+	background:none
+}
+.img2 {
+	background:none
+}
+.img3 {
+	background:none
+}
+
+
+/* header */
+header {
+	height: 70px;
+	background-color: #060c11;
+	border-bottom: 1px solid #494949;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+header > h1 {
+	width: calc(100% - 160px);
+	text-align: center;
+	font-size: 20px;
+	color: white;
+}
+header > .top {
+	position: absolute;
+	left: 20px;
+	top: 10px;
+}
+
+header > .top2 {
+	position: absolute;
+	right: 150px;
+	top: 25px;
+}
+
+header > .top a.menu_icon i {
+	color: rgb(252, 247, 247);
+	font-size: 40px;
+	padding-top: 5px;
+	transition: .2s ease;
+}
+header > .top a.menu_icon:hover i {
+	color: #fff;
+}
+nav.menu {
+	width: 300px;
+	min-height: calc(100vh - 121px);
+	background-color: white;
+	position: absolute;
+	left: -300px;
+	transition: .3s all;
+	height: 100%;
+}
+nav.menu > a {
+    display: block;
+    padding: 5px;
+    margin: 15px 0 0px 20px;
+    color: #494949;
+    text-transform: uppercase;
+}
+main {
+	width: 100%;
+	padding: 30px;
+	box-sizing: border-box;
+}
+.menu_show {
+	left: 0!important;
+}
+
+@media screen and (max-width: 425px) {
+	header h1 {
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 360px) {
+	nav.menu {
+		width: 100%;
+		left: -100%; 
+	}
+}
+
+
+
+
