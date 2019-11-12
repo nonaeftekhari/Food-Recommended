@@ -6,7 +6,7 @@ router = routers.DefaultRouter()
 router.register('Rest', views.restView)
 router.register('Item', views.itemView)
 router.register('User', views.userView)
-
+router.register('Rating', views.ratingView)
 
 urlpatterns = [
     path('', include(router.urls))
