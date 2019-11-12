@@ -15,3 +15,7 @@ class itemView(viewsets.ModelViewSet):
 class userView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = userSerializer
+
+class ratingView(viewsets.ModelViewSet):
+    queryset = Rating.objects.all()
+    serializer_class = ratingSerializer
