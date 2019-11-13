@@ -36,7 +36,7 @@ class User(models.Model):
 class Rating(models.Model):
     userEmail = models.ForeignKey(User, on_delete=models.CASCADE)
     restId =  models.ForeignKey(Rest, on_delete=models.CASCADE)
-    itemId =  models.ForeignKey(Item, on_delete=models.CASCADE)
+    #itemId =  models.ForeignKey(Item, on_delete=models.CASCADE)
     review = models.CharField(max_length=300, null=True)
     rating = models.PositiveIntegerField()
 
