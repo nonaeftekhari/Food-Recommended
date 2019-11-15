@@ -23,4 +23,4 @@ class userSerializer(serializers.ModelSerializer):
 class ratingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rating
-        fields = ['id', 'userEmail', 'restId', 'itemId', 'review', 'rating']
+        fields = ['id', 'userEmail', 'restId',  'review', 'rating'] #'itemId', removed item id
