@@ -34,8 +34,8 @@ class User(models.Model):
        return self.name
 
 class Rating(models.Model):
-    userEmail = models.ForeignKey(User, on_delete=models.CASCADE)
-    restId =  models.ForeignKey(Rest, on_delete=models.CASCADE)
+    userEmail = models.ForeignKey(User, on_delete=models.CASCADE) # removed , related_name='+'
+    restId =  models.ForeignKey(Rest, on_delete=models.CASCADE) # removed , related_name='+'
     #itemId =  models.ForeignKey(Item, on_delete=models.CASCADE)
     review = models.CharField(max_length=300, null=True)
     rating = models.PositiveIntegerField()
