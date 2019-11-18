@@ -15,5 +15,4 @@ urlpatterns = [
     path('User/ID/<str:pk>/', views.userID),
     path('Rating/', views.ratingList),
     path('Rating/Rest/<int:restId>/', views.ratingRest),
-    #path('', include(router.urls))
 ]
