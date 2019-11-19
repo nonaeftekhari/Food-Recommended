@@ -14,6 +14,8 @@ of getting the user to finding their desired restaurant.
      - pip install django 
                      
      - pip install djangorestframework
+     
+     - pip install Pillow
   
   Downloading Python and the libraries above give you the necessary frameworks to run a REST API.
   
