@@ -5,10 +5,9 @@ class Rest(models.Model):
     restName = models.CharField(max_length=50, null=False, default = " ")
     zipcode = models.PositiveIntegerField( null=False, default = 0)
     restRating = models.FloatField( null=False, default = 0)
-    #banner = models.ImageField( null=True)  #I need to do more to get images to work
+    banner = models.ImageField( null=True) 
     website = models.CharField(max_length=50, null=False, default = " ")
     phone = models.PositiveIntegerField( null=False, default = 0)
-    #how to do reviews? link to another table?
     restPrice = models.FloatField( null=False, default = 0)
 
     def __str__(self):
