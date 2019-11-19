@@ -17,6 +17,7 @@ urlpatterns = [
     path('User/ID/<str:pk>/', views.userID),
     path('Rating/', views.ratingList),
     path('Rating/Rest/<int:restId>/', views.ratingRest),
+    path('Rating/User/<str:userEmail>/', views.ratingUser),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
