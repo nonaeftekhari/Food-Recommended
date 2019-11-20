@@ -1,14 +1,11 @@
 package com.app.foodrecommendedtest;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -32,37 +29,42 @@ public class PostActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.text_view_result);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com")
+                .baseUrl("http://127.0.0.1:8000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        Call<List<Post>> call = jsonPlaceHolderApi.getPosts();
+        Call<List<Rest>> call = jsonPlaceHolderApi.getPosts();
 
-        call.enqueue(new Callback<List<Post>>() {
+        call.enqueue(new Callback<List<Rest>>() {
             @Override
-            public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
+            public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
                 if(!response.isSuccessful()) {
                     textViewResult.setText("Code: " + response.code());
                     return;
                 }
 
-                List<Post> posts = response.body();
+                List<Rest> rests = response.body();
 
-                for(Post post : posts) {
+
+                for(Rest rest : rests) {
                     String content="";
-                    content += "ID: " + post.getId() + "\n";
-                    content += "User ID: " + post.getUserId() + "\n";
-                    content += "Title: " +post.getTitle() + "\n";
-                    content += "Text: " + post.getBody() + "\n\n";
-
+                    content += "ID: " + rest.getId() + "\n";
+                    content += "Restaurant Name: " + rest.getRestName() + "\n";
+                    content += rest.getBanner();
+                    //Bitmap banner = BitmapFactory.decodeFile(rest.getBanner());
+                    //content += banner + "\n";
+                    content += "Zipcode: " + rest.getZipcode() + "\n";
+                    content += "Website: " + rest.getWebsite() + "\n";
+                    content += "Phone number: " + rest.getPhone() + "\n";
+                    content += "Avg Price: " + rest.getRestPrice() + "\n\n";
                     textViewResult.append(content);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Post>> call, Throwable t) {
+            public void onFailure(Call<List<Rest>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
             }
         });
