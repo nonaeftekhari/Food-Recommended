@@ -5,19 +5,15 @@
   <title>Food recommended</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="my-custom-theme.min.css" />
-	<link rel="stylesheet" href="jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="my-custom-theme.css" />
+	<link rel="stylesheet" href="themes/my-custom-theme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="JavaInter.js"></script>
 
 </head>
 
-<body>
-
-
+<body> 
     <div data-role="page" id="SignUp" data-theme="a">
   <div class="container">
     <h1>Sign Up</h1>
@@ -33,46 +29,25 @@
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
+    <label for="pass"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pass" required>
 
-    <form action ="MainActivity.Java" method="loadChartData()">
+    <label for="pass-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="pass-repeat" required>
 
-      <label>Password:   <input name = "pass"> </label>
-
-
-    </form>
-
-    <form action ="MainActivity.java" method="loadSecChartData()"/>
-
-      <label>Repeat Password:   <input name = "pass-repeat"> </label>
-
-
-    </form>
-
-
-      <label>
+    <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:20px"> Remember me
     </label>
 
     <div class="clearfix">
       <button type="button" class="cancelbutn">Cancel</button>
-          <button class="button button-block"/>Register</button>
+      <input type="button" value="Register" onclick="location.href='location.html'" />
     </div>
   </div>
         
 </form>
 </div>
 
-<style>
-    #Home {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    }
-    </style>
-
-<div style = "position:absolute; left:0px; top:580px; background-color:#F7F7F7;">
-  <input type="button" value="Home" onclick="location.href='index.html'" />
-</div>
-
+	
  </body>
 </html>
