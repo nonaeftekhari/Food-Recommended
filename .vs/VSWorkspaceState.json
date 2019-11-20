@@ -3,9 +3,7 @@
     "",
     "\\FoodAPI",
     "\\FoodAPI\\AppAPI",
-    "\\FoodAPI\\AppAPI\\__pycache__",
     "\\FoodAPI\\FoodAPI"
   ],
-  "SelectedNode": "\\FoodAPI\\AppAPI\\admin.py",
   "PreviewInSolutionExplorer": false
 }
