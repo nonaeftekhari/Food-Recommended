@@ -9,26 +9,22 @@ from .serializers import *
 # Create your views here.
 
 
+class userView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = userSerializer
 
+class restView(viewsets.ModelViewSet):
+    queryset = Rest.objects.all()
+    serializer_class = restSerializer
 
-# List rests and post single rest
-@csrf_exempt
-def restList(request):
-    if request.method == 'GET':
-        restObj = Rest.objects.all()
-        serializer = restSerializer(restObj, many=True)
-        return JsonResponse(serializer.data, safe=False)
+class itemView(viewsets.ModelViewSet):
+    queryset = Item.objects.all()
+    serializer_class = itemSerializer
+   
+class ratingView(viewsets.ModelViewSet):
+    queryset = Rating.objects.all()
+    serializer_class = ratingSerializer
 
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = restSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
-
-    else:
-        return HttpResponse(status=404)
 
 #pull info on a single rest by pk
 @csrf_exempt
@@ -56,25 +52,6 @@ def restZip(request, zipcode):
     if request.method == 'GET':
         serializer = restSerializer(restObj, many=True)
         return JsonResponse(serializer.data, safe=False)
-
-    else:
-        return HttpResponse(status=404)
-
-#get all items or post an item
-@csrf_exempt
-def itemList(request):
-    if request.method == 'GET':
-        itemObj = Item.objects.all()
-        serializer = itemSerializer(itemObj, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = itemSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
 
     else:
         return HttpResponse(status=404)
@@ -111,25 +88,6 @@ def itemRest(request, restId):
     else:
         return HttpResponse(status=404)
 
-#get all users and post a user
-@csrf_exempt
-def userList(request):
-    if request.method == 'GET':
-        userObj = User.objects.all()
-        serializer = userSerializer(userObj, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = userSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
-
-    else:
-        return HttpResponse(status=404)
-
  #get user by pk
 @csrf_exempt
 def userID(request, pk):
@@ -139,28 +97,8 @@ def userID(request, pk):
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        userObj = User.objects.all()
-        serializer =userSerializer(userObj, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-    else:
-        return HttpResponse(status=404)
-
-#get all ratings and post a rating
-@csrf_exempt
-def ratingList(request):
-    if request.method == 'GET':
-        ratingObj = Rating.objects.all()
-        serializer = ratingSerializer(ratingObj, many=True)
-        return JsonResponse(serializer.data, safe=False)
-
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = ratingSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+        serializer =userSerializer(userObj)
+        return JsonResponse(serializer.data)
 
     else:
         return HttpResponse(status=404)

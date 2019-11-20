@@ -13,7 +13,6 @@ class itemSerializer(serializers.ModelSerializer):
         fields = ['id', 'itemName', 'itemPrice', 'itemRating', 'description', 'restId']
 
 
-
 class userSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
