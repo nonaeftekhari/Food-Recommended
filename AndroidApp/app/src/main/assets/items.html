@@ -5,57 +5,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="layout.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/header.js"></script>
 </head>
 
     <body>
-            <header>
-            <h1>Menu</h1>
+				<header>
+						<h1>Menu</h1>
             <div class="top">
-                <a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
-            </div>
-                <div class="top2">
-                  <form>
-                    <input type="button" value="Log Out" onclick="location.href='login.html'" />
-                    </form>
-                    </div>
+                <button class="openbtn" onclick="openNav()">☰ </button>  
               </div>
+						<div class="dropdown">
+							<button onclick="myFunction()" class="dropbtn" style = "font-size:20px"><i class="fa fa-user-circle"></i></button>
+						</div>
+					</div>
           </header>
-          <nav class="menu">
-              <a href="menu.html" class="item_menu">home</a>
-              <a href="items.html" class="item_menu">Menu</a>
-              <a href="#" class="item_menu">about</a>
-              <a href="accountinfo.html" class="item_menu">Account Information</a>
-              <a href="#" class="item_menu">services</a>
-              <a href="#" class="item_menu">contact</a>
-            </nav>
+          
+          <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="menu.html">Home</a>
+              <a href="items.html">Menu</a>
+            </div>
+					
+					<div id="myDropdown" class="dropdown-content">
+						<a href="accountinfo.html">Account Information</a>
+						<a href="login.html">Log Out</a>
+						</div>
 
     
     <div class="row">
       <div class="column1">
-        <img src="pizza2.jpg" width="100%" height="200px" >
-        <img src="asian.jpg" width="100%" height="200px">   
-        <img src="donuts.jpg" width="100%" height="200px">
-        <img src="italian.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/pizza3.jpg" width="100%" height="200px" >
+        <img src="file:///android_asset/images/asian.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/donuts.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/italian.jpg" width="100%" height="200px">
       </div>
       <div class="column1">
-        <img src="maxican.jpg" width="100%" height="200px">
-        <img src="breakfast.jpg" width="100%" height="200px">
-        <img src="slush.jpg" width="100%" height="200px">
-        <img src="sushi.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/maxican.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/breakfast.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/slush.jpg" width="100%" height="200px">
+        <img src="file:///android_asset/images/sushi.jpg" width="100%" height="200px">
       </div>
-    </div>
-
-<script>
-  		  $(document).ready(function() {
-	$("body").on('click', '.top', function() {
-		$("nav.menu").toggleClass("menu_show");
-	});
-});
-</script>
-    
+    </div>   
     
   </body>
 </html>
