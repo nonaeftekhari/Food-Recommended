@@ -1,0 +1,25 @@
+header {
+	height: 70px;
+	background-color: #060c11;
+	border-bottom: 1px solid #494949;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+body { margin: 0 auto;
+	background-color: rgb(114, 159, 243);
+   }
+
+header > .top {
+	position: absolute;
+	left: 20px;
+	top: 25px;
+}
+
+header > .top2 {
+	position: absolute;
+	right: 200px;
+	top: 25px;
+}
