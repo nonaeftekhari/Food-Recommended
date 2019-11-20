@@ -5,95 +5,97 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="themes/layout.css"/>
-		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-		  <script type="text/javascript" src="js/script.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/header.js"></script>
+		
+		  
 </head>
 
 <body>
-		<div data-role="page" id="Mainmenu" data-theme="b">
 				<header>
 						<h1>Home</h1>
-						<div class="top">
-							<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
+            <div class="top">
+                <button class="openbtn" onclick="openNav()">☰ </button>  
+              </div>
+						<div class="dropdown">
+							<button onclick="myFunction()" class="dropbtn" style = "font-size:20px"><i class="fa fa-user-circle"></i></button>
 						</div>
-						<div class="top2">
-							<form>
-							  <input type="button" value="Log Out" onclick="location.href='login.html'" />
-							  </form>
-							  </div>
-					</header>
-					<nav class="menu">
-						<a href="menu.html" class="item_menu">home</a>
-						<a href="items.html" class="item_menu">Menu</a>
-						<a href="accountinfo.html" class="item_menu">Account Information</a>
-					</nav>			  
-		<br><b> Types of Foods <b><br>
-			<div class="row">
-			<div class="column">
-			<a target="_blank" href="pizza.jpg">
-				<img src="pizza.jpg" alt="Pizza" style="width:70px" class="avatar">
-			</div>
-			</a>
-
-			<div class="column">
-			<a target="_blank" href="burger.jpg">
-				<img src="burger.jpg" alt="avatar" style="width:80px" class="avatar">
-			</a>
-	        </div>
-
-			<div class="column">
-			<a target="_blank" href="sushi.jpg">
-				<img src="sushi.jpg" alt="avatar" style="width:70px" class="avatar">
-			</a>
-
+					</div>
+          </header>
+          
+          <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="menu.html">Home</a>
+              <a href="items.html">Menu</a>
+            </div>
+					
+			<div id="myDropdown" class="dropdown-content">
+				<a href="accountinfo.html">Account Information</a>
+				<a href="login.html">Log Out</a>
 			</div>
 
-			<div class="column">
-
-			<a target="_blank" href="donut.png">
-				<img src="donut.png" alt="avatar" style="width:80px" class="avatar">
+<div class="slideshow-container">
+    <h3> Types of Foods </h3>
+  
+      <div class="mySlides1 fade">
+			<a target="_blank" href="pizza.jpg"> 
+        <img src="images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar">
 			</a>
+        <a target="_blank" href="burger.jpg">
+            <img src="images/burger.jpg" alt="avatar" style="width:65px" class="avatar">
+          </a>
+
+      <a target="_blank" href="sushi2.jpg">
+            <img src="images/sushi2.jpg" alt="avatar" style="width:65px" class="avatar">
+      </a>
+
+      <a target="_blank" href="asian2.png">
+          <img src="images/asian2.png" alt="avatar" style="width:65px" class="avatar">
+      </a>
+      </div>
+
+      <div class="mySlides1 fade">
+      <a target="_blank" href="italian2.png">
+          <img src="images/italian2.png" alt="avatar" style="width:65px" class="avatar">
+      </a>
+
+      <a target="_blank" href="maxi.jpg">
+          <img src="images/maxi.jpg" alt="avatar" style="width:65px" class="avatar">
+      </a>
+
+      <a target="_blank" href="donut.png">
+          <img src="images/donut.png" alt="avatar" style="width:65px" class="avatar">
+      </a>
+      </div>
+    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a> <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    <div style="text-align:center"> </div>
+    </div>
+
+
 	
-		</div>
-	</div>
-
-
 	<div class="slideshow-container">
 		<h3>Popular Items:</h3>
 
-			<div class="mySlides1 fade"> 
-			  <!--Image here-->
-			  <img src="pizza2.jpg"alt="pizza2" width="100%" height="auto">
-			</div>
-			<div class="mySlides1 fade"> 
-			  <!--Image here-->
-			  <img src="chicken.jpg" alt="chicken" width="100%" height="auto">
-			</div>
-			<div class="mySlides1 fade"> 
-			  <!--Image here-->
-			  <img src="burger2.jpg" alt="burger2" width="100%" height="auto">
-			</div>
-			<a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a> <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-			<div style="text-align:center"> <span class="dot" onclick="currentSlide(1,0)"></span> <span class="dot" onclick="currentSlide(2,0)"></span> <span class="dot" onclick="currentSlide(3,0)"></span> </div>
-		  </div>
-		  <div class="slideshow-container">
 			<div class="mySlides2 fade"> 
-			<h3>Best Deals:</h3>
 			  <!--Image here-->
-			  
+			  <img src="images/pizza2.jpg"alt="pizza2" width="100%" height="auto">
 			</div>
 			<div class="mySlides2 fade"> 
 			  <!--Image here-->
-		
+			  <img src="images/chicken.jpg" alt="chicken" width="100%" height="auto">
 			</div>
 			<div class="mySlides2 fade"> 
 			  <!--Image here-->
-			  <div class="image img3">Image 2-3</div>
+			  <img src="images/burger2.jpg" alt="burger2" width="100%" height="auto">
 			</div>
 			<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a> <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-			<div style="text-align:center"> <span class="dot" onclick="currentSlide(1,1)"></span> <span class="dot" onclick="currentSlide(2,1)"></span> <span class="dot" onclick="currentSlide(3,1)"></span> </div>
-		  </div>
+			<div style="text-align:center"> </div>
+      </div>
+      
+
 		  <div class="slideshow-container">
 			<div class="mySlides3 fade"> 
 			
@@ -143,39 +145,40 @@
 			<a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a> <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
 			<div style="text-align:center"> <span class="dot" onclick="currentSlide(1,4)"></span> <span class="dot" onclick="currentSlide(2,4)"></span> <span class="dot" onclick="currentSlide(3,4)"></span> </div>
 		  </div>
+
 	<script>
-		  var slideIndex = [1,1,1,1,1];
-		  var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
-		  showSlides(1, 0);
-		  showSlides(1, 1);
-		  showSlides(1, 2);
-		  showSlides(1, 3);
-		  showSlides(1, 4);
-		  
-		  function plusSlides(n, no) {
-			showSlides(slideIndex[no] += n, no);
-		  }
-		  function currentSlide(n, no) {
-			showSlides(slideIndex[no] = n, no);
-		  }
-		  function showSlides(n, no) {
-			var i;
-			var x = document.getElementsByClassName(slideId[no]);
-			if (n > x.length) {slideIndex[no] = 1}    
-			if (n < 1) {slideIndex[no] = x.length}
-			for (i = 0; i < x.length; i++) {
-			   x[i].style.display = "none";  
-			}
-			x[slideIndex[no]-1].style.display = "block";  
-		  }
 
 
-		  $(document).ready(function() {
-	$("body").on('click', '.top', function() {
-		$("nav.menu").toggleClass("menu_show");
-	});
-});
-		  </script>
-			
+
+		// slideshow of pictures
+var slideIndex = [1,1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+showSlides(1, 3);
+showSlides(1, 4);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+function currentSlide(n, no) {
+  showSlides(slideIndex[no] = n, no);
+}
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+
+
+  
+	</script>
+
  </body>
 </html>
