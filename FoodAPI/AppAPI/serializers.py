@@ -4,7 +4,7 @@ from .models import *
 class restSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rest
-        fields = ['id', 'restName', 'zipcode', 'restRating', 'website', 'phone', 'restPrice']
+        fields = ['id', 'restName', 'banner', 'zipcode', 'restRating', 'website', 'phone', 'restPrice']
         #need to still ad image and reviews
 
 class itemSerializer(serializers.ModelSerializer):
