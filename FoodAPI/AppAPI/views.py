@@ -181,22 +181,18 @@ def ratingRest(request, restId):
     else:
         return HttpResponse(status=404)
 
-"""
+#get all ratings from on user
+@csrf_exempt
+def ratingUser(request, userEmail):
+    try:
+        ratingObj = Rating.objects.get(userEmail=userEmail)
+    except Rating.DoesNotExist:
+        return HttpResponse(status=404)
 
-class restView(viewsets.ModelViewSet):
-    queryset = Rest.objects.all()
-    serializer_class = restSerializer
+    if request.method == 'GET':
+        ratingObj = Rating.objects.all()
+        serializer = ratingSerializer(ratingObj, many=True)
+        return JsonResponse(serializer.data, safe=False)
 
-class itemView(viewsets.ModelViewSet):
-    queryset = Item.objects.all()
-    serializer_class = itemSerializer
-
-class userView(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = userSerializer
-
-class ratingView(viewsets.ModelViewSet):
-    queryset = Rating.objects.all()
-    serializer_class = ratingSerializer
-
-"""
+    else:
+        return HttpResponse(status=404)
