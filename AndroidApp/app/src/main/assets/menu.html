@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food recommended</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="layout.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+<!--		<script type="text/javascript" src="header.js"></script>-->
+		
+		  
+</head>
+
+<body>
+				<header>
+						<h1>Home</h1>
+            <div class="top">
+                <button class="openbtn" onclick="openNav()">☰ </button>  
+              </div>
+						<div class="dropdown">
+							<button onclick="myFunction()" class="dropbtn" style = "font-size:20px"><i class="fa fa-user-circle"></i></button>
+						</div>
+					</div>
+          </header>
+          
+          <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="menu.html">Home</a>
+              <a href="items.html">Menu</a>
+            </div>
+					
+			<div id="myDropdown" class="dropdown-content">
+				<a href="accountinfo.html">Account Information</a>
+				<a href="login.html">Log Out</a>
+			</div>
+
+<div class="slideshow-container">
+    <h3> Types of Foods </h3>
+  
+      <div class="mySlides1 fade">
+			<a target="_blank" href="file:///android_asset/images/pizza.jpg">
+        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar">
+			</a>
+        <a target="_blank" href="file:///android_asset/images/burger.jpg">
+            <img src="file:///android_asset/images/burger.jpg" alt="avatar" style="width:65px" class="avatar">
+          </a>
+
+      <a target="_blank" href="file:///android_asset/images/sushi2.jpg">
+            <img src="file:///android_asset/images/sushi2.jpg" alt="avatar" style="width:65px" class="avatar">
+      </a>
+
+      <a target="_blank" href="file:///android_asset/images/asian2.png">
+          <img src="file:///android_asset/images/asian2.png" alt="avatar" style="width:65px" class="avatar">
+      </a>
+      </div>
+
+      <div class="mySlides1 fade">
+      <a target="_blank" href="file:///android_asset/images/italian2.png">
+          <img src="file:///android_asset/images/italian2.png" alt="avatar" style="width:65px" class="avatar">
+      </a>
+
+      <a target="_blank" href="file:///android_asset/images/maxi.jpg">
+          <img src="file:///android_asset/images/maxi.jpg" alt="avatar" style="width:65px" class="avatar">
+      </a>
+
+      <a target="_blank" href="file:///android_asset/images/donut.png">
+          <img src="file:///android_asset/images/donut.png" alt="avatar" style="width:65px" class="avatar">
+      </a>
+      </div>
+    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a> <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    <div style="text-align:center"> </div>
+    </div>
+
+
+	
+	<div class="slideshow-container">
+		<h3>Popular Items:</h3>
+
+			<div class="mySlides2 fade"> 
+			  <!--Image here-->
+			  <img src="file:///android_asset/images/pizza2.jpg" alt="pizza2" width="100%" height="auto">
+			</div>
+			<div class="mySlides2 fade"> 
+			  <!--Image here-->
+			  <img src="file:///android_asset/images/chicken.jpg" alt="chicken" width="100%" height="auto">
+			</div>
+			<div class="mySlides2 fade"> 
+			  <!--Image here-->
+			  <img src="file:///android_asset/images/burger2.jpg" alt="burger2" width="100%" height="auto">
+			</div>
+			<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a> <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+			<div style="text-align:center"> </div>
+      </div>
+      
+
+
+	<script>
+
+
+
+		// slideshow of pictures
+var slideIndex = [1,1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+showSlides(1, 3);
+showSlides(1, 4);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+function currentSlide(n, no) {
+  showSlides(slideIndex[no] = n, no);
+}
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+
+// hamburger menu
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+  
+	</script>
+
+ </body>
+</html>
