@@ -2,10 +2,12 @@ from rest_framework import serializers
 from .models import *
 
 class restSerializer(serializers.ModelSerializer):
+    restRating = serializers.FloatField
+
     class Meta:
         model = Rest
-        fields = ['id', 'restName', 'banner', 'zipcode', 'restRating', 'website', 'phone', 'restPrice']
-        #need to still ad image and reviews
+        fields = ['id', 'restName', 'banner', 'zipcode', 'restRating', 'website', 'phone', 'restPrice', 'category']
+        
 
 class itemSerializer(serializers.ModelSerializer):
     class Meta:

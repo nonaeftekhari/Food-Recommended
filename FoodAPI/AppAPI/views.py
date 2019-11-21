@@ -56,16 +56,29 @@ def restZip(request, zipcode):
     else:
         return HttpResponse(status=404)
 
+#get all rest in zip code and the right category
+def restZipCat(request, zipcode, category):
+    try:
+        restObj = Rest.objects.filter(zipcode=zipcode, category=category)
+    except Rest.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = restSerializer(restObj, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+    else:
+        return HttpResponse(status=404)
+
 #get info on an item from pk
 @csrf_exempt
 def itemID(request, pk):
     try:
-        itemObj = Item.objects.get(pk=pk)
+        itemObj = Item.objects.filter(pk=pk)
     except Item.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        itemObj = Item.objects.all()
         serializer = itemSerializer(itemObj, many=True)
         return JsonResponse(serializer.data, safe=False)
 
@@ -76,12 +89,11 @@ def itemID(request, pk):
 @csrf_exempt
 def itemRest(request, restId):
     try:
-        itemObj = Item.objects.get(restId=restId)
+        itemObj = Item.objects.filter(restId=restId)
     except Item.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        itemObj = Item.objects.all()
         serializer = itemSerializer(itemObj, many=True)
         return JsonResponse(serializer.data, safe=False)
 
@@ -107,12 +119,11 @@ def userID(request, pk):
 @csrf_exempt
 def ratingRest(request, restId):
     try:
-        ratingObj = Rating.objects.get(restId=restId)
+        ratingObj = Rating.objects.filter(restId=restId)
     except Rating.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        ratingObj = Rating.objects.all()
         serializer = ratingSerializer(ratingObj, many=True)
         return JsonResponse(serializer.data, safe=False)
 
@@ -123,12 +134,11 @@ def ratingRest(request, restId):
 @csrf_exempt
 def ratingUser(request, userEmail):
     try:
-        ratingObj = Rating.objects.get(userEmail=userEmail)
+        ratingObj = Rating.objects.filter(userEmail=userEmail)
     except Rating.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        ratingObj = Rating.objects.all()
         serializer = ratingSerializer(ratingObj, many=True)
         return JsonResponse(serializer.data, safe=False)
 
