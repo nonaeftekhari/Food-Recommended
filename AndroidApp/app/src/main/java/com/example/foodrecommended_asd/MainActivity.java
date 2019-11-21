@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         // This code below is to add the html file into the app
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build()); // ignores URI
@@ -22,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.getSettings().setJavaScriptEnabled(true);
-
-
 
         final WebView browser=(WebView)view.findViewById(R.id.webView);
 
