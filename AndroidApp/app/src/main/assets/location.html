@@ -21,14 +21,14 @@
         <a href="javascript:history.back()">Go Back</a>
 	        <h1><center><p>Location Finder</p></center></h1>
 	</div><!-- /header -->
-    <button onclick="showAndroidMessage('Going to Google Maps!')" >Use GPS</button>
+    <button onclick="showAndroidMessage('Going to Google Maps!'); showGPS()" >Use GPS</button>
 
     <p id="demo"></p>
 	<div data-role="main" class="ui-content"> 
     <center><label for="Zipcode"><p>Enter Zip Code:</p></label></center>
 
-	<center><input type="number" <a href="index.html#Location" id="Zipcode" name="Zipcode">
-	      <input type="button" value="Continue" onclick="location.href='menu.html'" />
+	<center><input type="number" id="Zipcode" name="Zipcode">
+	      <input type="button" value="Continue" onclick="setZipCode();" id="locate"/>
     </center>
 	</div><!-- /content -->
 	
@@ -38,6 +38,17 @@
     function showAndroidMessage(toast) {
         document.getElementById("Zipcode").value=Android.zipForm();
         Android.showMessage(toast);
+    }
+
+    function showGPS(){
+        Android.showLocation();
+
+    }
+
+    function setZipCode(zip){
+        Restaurant.setZip(document.getElementById("Zipcode").value);
+        Android.showMessage(Restaurant.getZip());
+        location.href="menu.html";
     }
 </script>
 

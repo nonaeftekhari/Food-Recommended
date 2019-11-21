@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         // Creating a javascript object to pass through the .addJavaScriptInterface
         JavaInter javaInterObj = new JavaInter(this);
         AccountSignup exAccount = new AccountSignup();
+        Restaurant exRestaurant = new Restaurant();
 
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.getSettings().setJavaScriptEnabled(true);
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         browser.addJavascriptInterface(javaInterObj, "Android");
         browser.addJavascriptInterface(exAccount, "AccountMethods");
+        browser.addJavascriptInterface(exRestaurant, "Restaurant");
 
         // Color for background #3498db
 
@@ -55,12 +57,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @JavascriptInterface // This will post a toast, and take you to the GPS
-        public void showMessage(String msg) {
-            this.message = msg;
-            Toast.makeText(jContext, msg, Toast.LENGTH_LONG).show(); // This is a toast!
+        public void showLocation() {
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);
         }
+
+        @JavascriptInterface
+        public void showMessage(String msg) {
+            this.message = msg;
+            Toast.makeText(jContext, msg, Toast.LENGTH_LONG).show(); // This is a toast!
+        }
+
 
         @JavascriptInterface // This will return the zip code into the form
         public String zipForm(){
