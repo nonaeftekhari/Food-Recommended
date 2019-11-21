@@ -5,10 +5,10 @@ from django.db.models import Avg
 class Rest(models.Model):
     restName = models.CharField(max_length=50, null=False, default = " ")
     zipcode = models.PositiveIntegerField( null=False, default = 0)
-    banner = models.ImageField( null=True) 
+    banner = models.ImageField( null=True, default = '/media/ic_launcher_img_foreground.jpg')  
     website = models.URLField(max_length=50, null=False, default = " ")
     phone = models.PositiveIntegerField( null=False, default = 0)
-    category = models.PositiveIntegerField(null = False, default= 0)
+    category = models.PositiveIntegerField(null = True, default= 0)
 
     @property
     def restRating(self):
