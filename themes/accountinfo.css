@@ -1,6 +1,5 @@
 header {
 	height: 70px;
-	color:white;
 	background-color: #060c11;
 	border-bottom: 1px solid #494949;
 	display: flex;
@@ -10,7 +9,7 @@ header {
 
 
 body { margin: 0 auto;
-	background-color: rgb(90, 160, 201);
+	background-color: rgb(114, 159, 243);
    }
 
 header > .top {
@@ -23,50 +22,4 @@ header > .top2 {
 	position: absolute;
 	right: 200px;
 	top: 25px;
-}
-
-* {
-	box-sizing: border-box;
-  }
-  
-  /* Create two equal columns that floats next to each other */
-  .column {
-	float: left;
-	width: 50.00%;
-	padding: 50px;
-	height: 1000px; 
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-	content: "";
-	display: table;
-	clear: both;
-  }
-
-  @media screen and (max-width: 360px) {
-	header> .top2 {
-		width: 100%;
-		left: 270px; 
-	}
-
-
-	@media screen and (max-width: 360px) {
-  /* Create two equal columns that floats next to each other */
-  .column {
-	float: left;
-	width: 50.00%;
-	padding: 15px;
-	height: 1000px; 
-  }
-   /* @media screen and (max-width: 800px) {
-	/* Create two equal columns that floats next to each other */
-	/* .column {
-	  float: left;
-	  width: 50.00%;
-	  padding: 70px;
-	  height: 1000px; 
-
-   }  */
-} 
 }
