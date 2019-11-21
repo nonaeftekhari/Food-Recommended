@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Rest)
 admin.site.register(Item)
 admin.site.register(User)
+admin.site.register(Rating)
