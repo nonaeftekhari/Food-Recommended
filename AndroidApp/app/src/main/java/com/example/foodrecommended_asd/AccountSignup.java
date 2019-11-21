@@ -1,5 +1,7 @@
 package com.example.foodrecommended_asd;
 
+import android.webkit.JavascriptInterface;
+
 public class AccountSignup {
     private String password;
     private String checkPass;
@@ -21,7 +23,8 @@ public class AccountSignup {
         return email;
     }
 
-    void setEmail(String e){
+    @JavascriptInterface
+    public void setEmail(String e){
         email = e;
     }
 
@@ -37,11 +40,10 @@ public class AccountSignup {
         checkPass = pass;
     }
 
-    String getCheckPass(){
+    @JavascriptInterface
+    public String getCheckPass(){
         return checkPass;
     }
-
-
 
     void setAccountInfo(String e, String p){
         AccInfo[0] = email;
@@ -53,14 +55,14 @@ public class AccountSignup {
 
     }
 
-    boolean checkPassword(String pass1, String pass2){
+    @JavascriptInterface
+    public boolean checkPassword(String pass1, String pass2){
         for (int i = 0; i < pass1.length(); i++){
             if(pass1.charAt(i) != pass2.charAt(i)){
                 return false;
             }
-
         }
-
+        this.password = pass1;
         return true;
     }
 

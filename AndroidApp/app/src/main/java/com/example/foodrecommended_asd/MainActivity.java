@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Creating a javascript object to pass through the .addJavaScriptInterface
         JavaInter javaInterObj = new JavaInter(this);
+        AccountSignup exAccount = new AccountSignup();
 
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.getSettings().setJavaScriptEnabled(true);
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         browser.getSettings().setJavaScriptEnabled(true);
 
         browser.addJavascriptInterface(javaInterObj, "Android");
+        browser.addJavascriptInterface(exAccount, "AccountMethods");
 
         // Color for background #3498db
 
