@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
-<!--		<script type="text/javascript" src="header.js"></script>-->
+		<script type="text/javascript" src="header.js"></script>
 		
 		  
 </head>
@@ -36,12 +36,13 @@
 				<a href="accountinfo.html">Account Information</a>
 				<a href="login.html">Log Out</a>
 			</div>
+                <button onclick="goBack()">Go Back </button>
 
 <div class="slideshow-container">
     <h3> Types of Foods </h3>
   
       <div class="mySlides1 fade">
-			<a target="_blank" href="file:///android_asset/images/pizza.jpg">
+          <a href="pizza.html">
         <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar">
 			</a>
         <a target="_blank" href="file:///android_asset/images/burger.jpg">
@@ -94,8 +95,22 @@
 			<a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a> <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 			<div style="text-align:center"> </div>
       </div>
-      
 
+                <div class="slideshow-container">
+
+                    <h3>Kids' Menu</h3>
+                    <div class="mySlides3 fade">
+
+                        <!--Image here-->
+                        <img src="images/frenchtoast.jpg" alt="frenchtoast" width="100%" height="auto">
+                    </div>
+                    <div class="mySlides3 fade">
+                        <!--Image here-->
+                        <img src="images/french-fries.jpg" alt="french-fries" width="100%" height="auto">
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a> <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+                    <div style="text-align:center"> <span class="dot" onclick="currentSlide(1,2)"></span> <span class="dot" onclick="currentSlide(2,2)"></span> <span class="dot" onclick="currentSlide(3,2)"></span> </div>
+                </div>
 
 	<script>
 
@@ -127,37 +142,11 @@ function showSlides(n, no) {
   x[slideIndex[no]-1].style.display = "block";  
 }
 
-// hamburger menu
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+
+function goBack() {
+  window.history.back()
 }
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 
 
 

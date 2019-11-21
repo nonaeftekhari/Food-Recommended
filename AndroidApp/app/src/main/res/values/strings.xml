@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FoodRecommended-ASD</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

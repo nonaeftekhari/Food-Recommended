@@ -139,9 +139,8 @@ def userID(request, pk):
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        userObj = User.objects.all()
-        serializer =userSerializer(userObj, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        serializer = userSerializer(userObj)
+        return JsonResponse(serializer.data)
 
     else:
         return HttpResponse(status=404)

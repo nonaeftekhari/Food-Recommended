@@ -25,12 +25,12 @@ class Item(models.Model):
        return self.itemName
 
 class User(models.Model):
-    userEmail = models.CharField(max_length=50, null=False, primary_key=True, default = " ")
+    userEmail = models.EmailField(max_length=50, null=False, primary_key=True, default = " ")
     password = models.CharField(max_length=50,  null=False, default = " ")
     name = models.CharField(max_length=50,  null=False, default = " ")
 
     def __str__(self):
-       return self.name
+       return self.userEmail
 
 class Rating(models.Model):
     userEmail = models.ForeignKey(User, on_delete=models.CASCADE) # removed , related_name='+'
