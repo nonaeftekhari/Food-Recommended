@@ -15,8 +15,8 @@ router.register('Rating', views.ratingView)
 urlpatterns = [
     path('', include(router.urls)),
     path('Rest/Zip/<int:zipcode>/', views.restZip),
+    path('Rest/Zip/<int:zipcode>/Cat/<int:category>/', views.restZipCat),
     path('Rest/ID/<int:pk>/', views.restID),
-    path('Rest/Zip/<int:zipcode>/', views.restZip),
     path('Item/ID/<int:pk>/', views.itemID),
     path('Item/Rest/<int:restId>/', views.itemRest),
     path('User/ID/<str:pk>/', views.userID),
