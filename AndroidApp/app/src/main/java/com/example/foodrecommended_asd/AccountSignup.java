@@ -57,13 +57,18 @@ public class AccountSignup {
 
     @JavascriptInterface
     public boolean checkPassword(String pass1, String pass2){
-        for (int i = 0; i < pass1.length(); i++){
-            if(pass1.charAt(i) != pass2.charAt(i)){
-                return false;
-            }
+        if (pass1.length() == 0 || pass2.length() == 0){
+            return false;
         }
-        this.password = pass1;
-        return true;
+        else {
+            for (int i = 0; i < pass1.length(); i++) {
+                if (pass1.charAt(i) != pass2.charAt(i)) {
+                    return false;
+                }
+            }
+            this.password = pass1;
+            return true;
+        }
     }
 
 }
