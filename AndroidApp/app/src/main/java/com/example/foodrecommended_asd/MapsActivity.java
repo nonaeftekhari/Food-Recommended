@@ -24,8 +24,9 @@ import java.util.Locale;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    static double var1;
-    static double var2;
+    static double latit; // Latitude
+    static double longit; // Longitude
+    static String zip; // Zipcode
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +47,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                 double longitude = location.getLongitude();
                 double latitude = location.getLatitude();
-                var1 = latitude;
-                var2 = longitude;
+                latit = latitude; // Add to our static variables for moving the marker
+                longit = longitude;
                 // This will turn the latitude and longitude into a zip code to put into the database.
                 Geocoder geocoder = new Geocoder(this, Locale.ENGLISH);
                 List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
                 Address address = null;
-                String addr = "";
+                String addr = ""; // Address
                 String zipcode = "";
                 String city = "";
                 String state = "";
@@ -60,12 +61,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     addr = addresses.get(0).getAddressLine(0) + "," + addresses.get(0).getSubAdminArea();
                     city = addresses.get(0).getLocality();
-                    state = addresses.get(0).getAdminArea();
+                    state = addresses.get(0).getAdminArea(); // Get's the closest area based off network
 
                     for (int i = 0; i < addresses.size(); i++) {
                         address = addresses.get(i);
                         if (address.getPostalCode() != null) {
                             zipcode = address.getPostalCode();
+                            zip = zipcode;
                             break;
                         }
 
@@ -94,8 +96,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in the User's Location and move the camera
-        LatLng userLocation = new LatLng(var1, var2);
+        LatLng userLocation = new LatLng(latit, longit);
         mMap.addMarker(new MarkerOptions().position(userLocation).title("Marker in User's Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
+    }
+
+    // When a MapActivity object is created, you are able to retrieve the Zip.
+    String getZip(){
+        return zip;
     }
 }
