@@ -20,7 +20,7 @@
     <div data-role="header">
 	        <h1><center><p>Location Finder</p></center></h1>
 	</div><!-- /header -->
-    <button onclick="getLocation()">Use GPS</button>
+    <button onclick="showAndroidMessage('Going to Google Maps!')" >Use GPS</button>
 
     <p id="demo"></p>
 	<div data-role="main" class="ui-content"> 
@@ -32,6 +32,14 @@
 	</div><!-- /content -->
 	
   </div><!-- /page -->
+
+ <script type="text/javascript">
+    function showAndroidMessage(toast) {
+        document.getElementById("Zipcode").value=Android.zipForm();
+        Android.showMessage(toast);
+    }
+</script>
+
   <script>
 var x = document.getElementById("demo");
 
