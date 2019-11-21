@@ -1,4 +1,5 @@
-package com.app.foodrecommendedtest;
+package com.example.foodrecommended_asd;
+
 
 public class Post {
     private int userId;
