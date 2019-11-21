@@ -1,4 +1,5 @@
-package com.app.foodrecommendedtest;
+package com.example.foodrecommended_asd;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;

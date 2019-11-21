@@ -1,4 +1,5 @@
-package com.app.foodrecommendedtest;
+package com.example.foodrecommended_asd;
+
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
