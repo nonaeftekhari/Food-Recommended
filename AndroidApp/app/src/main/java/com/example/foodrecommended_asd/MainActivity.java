@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         browser.addJavascriptInterface(javaInterObj, "Android");
 
+        // Color for background #3498db
+
         } // End of MainActivity
 
     public class JavaInter{
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         String getMessage(){
-            return message;
+            return this.message;
         }
 
     }
