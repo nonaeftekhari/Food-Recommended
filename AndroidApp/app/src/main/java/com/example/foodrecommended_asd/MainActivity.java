@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     } // End of MainActivity
 
-    private void getRest() {
+    public void getRest() {
         Call<List<Rest>> call = foodAPI.getRests();
 
         call.enqueue(new Callback<List<Rest>>() {
@@ -394,7 +394,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //can prob delete all this stuff
     /*
 
     public class JavaInter{
