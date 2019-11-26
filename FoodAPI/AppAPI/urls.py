@@ -9,6 +9,7 @@ router.register('Rest', views.restView)
 router.register('User', views.userView)
 router.register('Item', views.itemView)
 router.register('Rating', views.ratingView)
+router.register('RatingItem', views.ratingItemView)
 
 
 #all custom url endpoints

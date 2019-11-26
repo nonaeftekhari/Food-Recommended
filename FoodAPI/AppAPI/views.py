@@ -25,6 +25,10 @@ class ratingView(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = ratingSerializer
 
+class ratingItemView(viewsets.ModelViewSet):
+    queryset = RatingItem.objects.all()
+    serializer_class = ratingItemSerializer
+
 
 #pull info on a single rest by pk
 @csrf_exempt
