@@ -3,9 +3,10 @@ package com.example.foodrecommended_asd;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
-import java.nio.file.attribute.PosixFileAttributes;
 import java.util.List;
 
 import retrofit2.Call;
@@ -16,15 +17,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewResult;
     private FoodAPI foodAPI;
+    private WebView testRest;
+
+    //temp objects
+    private List<Rest> tempRestList;
+    private User tempUser;
+    private List<Item> tempItemList;
+    private List<Rating> tempRatingList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        textViewResult = findViewById(R.id.text_view_result);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:8000/")
@@ -34,16 +40,17 @@ public class MainActivity extends AppCompatActivity {
         foodAPI = retrofit.create(FoodAPI.class);
 
         //getRest();
-        //getRestZip(48201);
-        //createRest();
+        getRestZip(48201);
+        //createRest("Jet's Pizza", 48201, "https://www.jetspizza.com/", 3132977000.0, 0);
         //getUserID("test@gmail.com");
         //createUser("jonsmith2@gmail.com", "p@ssw0rd", "jonsmith2");
         //getItemRest(2);
         //createItem("Tonkotsu Ramen", "Pork, Noodle, and Green Onion", 4, 11.95);
         //getRatingRest(2);
-        creatRating();
+        //creatRating("root@gmail.com", 2, "Too Salty for me", 3);
 
-
+        List<Rest> testObj;
+        testObj = getRest();
 
         /*
 
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         JavaInter javaInterObj = new JavaInter(this);
         AccountSignup exAccount = new AccountSignup();
         Restaurant exRestaurant = new Restaurant();
-
+        */
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.getSettings().setJavaScriptEnabled(true);
         // The browser is what's used to view the webView
@@ -65,95 +72,69 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = browser.getSettings();
         webSettings.setJavaScriptEnabled(true); // Enableing Javascript
 
-        browser.loadUrl("file:///android_asset/index.html");// The code above is the html file added into the app.
+        browser.loadUrl("file:///android_asset/menu.html");// The code above is the html file added into the app.
         browser.getSettings().setJavaScriptEnabled(true);
 
-        browser.addJavascriptInterface(javaInterObj, "Android");
-        browser.addJavascriptInterface(exAccount, "AccountMethods");
-        browser.addJavascriptInterface(exRestaurant, "Restaurant");
+        //browser.addJavascriptInterface(javaInterObj, "Android");
+        //browser.addJavascriptInterface(exAccount, "AccountMethods");
+        //browser.addJavascriptInterface(exRestaurant, "Restaurant");
+
+
+        //we need to fix that
+        //browser.addJavascriptInterface(testObj, "stupidObj");
+
 
         // Color for background #3498db
 
-        */
-
     } // End of MainActivity
 
-    private void getRest() {
+    @JavascriptInterface
+    public List<Rest> getRest() {
         Call<List<Rest>> call = foodAPI.getRests();
 
         call.enqueue(new Callback<List<Rest>>() {
             @Override
             public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
-
-                List<Rest> rests = response.body();
-
-                for (Rest rest : rests) {
-                    String content = "";
-                    content += rest.getId() + "\n";
-                    content += rest.getRestName() + "\n";
-                    content += rest.getZipcode() + "\n";
-                    content += rest.getRestRating() + "\n";
-                    content += rest.getWebsite() + "\n";
-                    content += rest.getPhone() + "\n";
-                    content += rest.getRestPrice() + "\n";
-                    content += rest.getCategory() + "\n\n";
-
-                    textViewResult.append(content);
-
-                }
+                tempRestList = response.body();
             }
 
             @Override
             public void onFailure(Call<List<Rest>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
+
             }
         });
 
+        return tempRestList;
     }
 
-    private void getRestZip(int zip) {
+    @JavascriptInterface
+    public List<Rest> getRestZip(int zip) {
         Call<List<Rest>> call = foodAPI.getRestZip(zip);
 
         call.enqueue(new Callback<List<Rest>>() {
             @Override
             public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
 
-                List<Rest> rests = response.body();
+                tempRestList = response.body();
 
-                for (Rest rest : rests) {
-                    String content = "";
-                    content += rest.getId() + "\n";
-                    content += rest.getRestName() + "\n";
-                    content += rest.getZipcode() + "\n";
-                    content += rest.getRestRating() + "\n";
-                    content += rest.getWebsite() + "\n";
-                    content += rest.getPhone() + "\n";
-                    content += rest.getRestPrice() + "\n";
-                    content += rest.getCategory() + "\n\n";
-
-                    textViewResult.append(content);
-
-                }
             }
 
             @Override
             public void onFailure(Call<List<Rest>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
+
             }
         });
-
+        return tempRestList;
     }
 
-    private void createRest() {
-        Rest rest = new Rest("Jet's Pizza", 48201, "https://www.jetspizza.com/", 3132977000.0, 0);
+    private void createRest(String restName, int zipcode, String website, long phone, int category) {
+        Rest rest = new Rest(restName, zipcode, website, phone, category);
 
         Call<Rest> call = foodAPI.createRest(rest);
 
@@ -161,60 +142,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Rest> call, Response<Rest> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
 
-                Rest restResponse = response.body();
-
-                String content = "";
-                content += response.code() + "\n";
-                content += restResponse.getId() + "\n";
-                content += restResponse.getRestName() + "\n";
-                content += restResponse.getZipcode() + "\n";
-                content += restResponse.getRestRating() + "\n";
-                content += restResponse.getWebsite() + "\n";
-                content += restResponse.getPhone() + "\n";
-                content += restResponse.getRestPrice() + "\n";
-                content += restResponse.getCategory() + "\n\n";
-
-                textViewResult.append(content);
             }
 
             @Override
             public void onFailure(Call<Rest> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
+
             }
         });
     }
 
-    private void getUserID(String userEmail) {
+    private User getUserID(String userEmail) {
         Call call = foodAPI.getUserID(userEmail);
 
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
+
                     return;
                 }
 
-                User user = response.body();
-
-                String content = "";
-                content += user.getUserEmail() + "\n";
-                content += user.getName() + "\n";
-                content += user.getPassword() + "\n\n";
-
-                textViewResult.append(content);
+                tempUser = response.body();
 
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
+
             }
         });
+
+        return tempUser;
     }
 
     private void createUser(String userEmail, String password, String name) {
@@ -226,62 +187,40 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
+
                     return;
                 }
-
-                User createUser = response.body();
-
-                String content = "";
-                content += response.code() + "\n";
-                content += createUser.getUserEmail() + "\n";
-                content += createUser.getName() + "\n";
-                content += createUser.getPassword() + "\n\n";
-
-                textViewResult.append(content);
 
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
+
             }
         });
 
     }
 
-    private void getItemRest(int id) {
+    private List<Item> getItemRest(int id) {
         Call<List<Item>> call = foodAPI.getItemRest(id);
 
         call.enqueue(new Callback<List<Item>>() {
             @Override
             public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
-                List<Item> items = response.body();
 
-                for (Item item : items) {
-                    String content = "";
-                    content += item.getId() + "\n";
-                    content += item.getItemName() + "\n";
-                    content += item.getItemPrice() + "\n";
-                    content += item.getItemRating() + "\n";
-                    content += item.getDescription() + "\n";
-                    content += item.getRestId() + "\n\n";
-
-                    textViewResult.append(content);
-
-                }
+                tempItemList = response.body();
 
             }
 
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
             }
         });
+
+        return tempItemList;
     }
 
     public void createItem(String itemName, String description, int restId, double itemPrice) {
@@ -293,69 +232,41 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Item> call, Response<Item> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
-
-                Item item = response.body();
-
-                String content = "";
-                content += response.code() + "\n";
-                content += item.getId() + "\n";
-                content += item.getItemName() + "\n";
-                content += item.getItemPrice() + "\n";
-                content += item.getItemRating() + "\n";
-                content += item.getDescription() + "\n";
-                content += item.getRestId() + "\n\n";
-
-                textViewResult.append(content);
 
             }
 
 
             @Override
             public void onFailure(Call<Item> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
             }
         });
     }
 
-    public void getRatingRest(int id) {
+    public List<Rating> getRatingRest(int id) {
         Call<List<Rating>> call = foodAPI.getRatingRest(id);
 
         call.enqueue(new Callback<List<Rating>>() {
             @Override
             public void onResponse(Call<List<Rating>> call, Response<List<Rating>> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
-
-                List<Rating> ratings = response.body();
-
-                for (Rating rating : ratings) {
-                    String content = "";
-                    content += rating.getId() + "\n";
-                    content += rating.getUserEmail() + "\n";
-                    content += rating.getRestId() + "\n";
-                    content += rating.getReview() + "\n";
-                    content += rating.getRating() + "\n\n";
-
-
-                    textViewResult.append(content);
-
-                }
+                tempRatingList = response.body();
             }
 
             @Override
             public void onFailure(Call<List<Rating>> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
+
             }
         });
+
+        return tempRatingList;
     }
 
-    public void creatRating() {
-        Rating rating = new Rating("root@gmail.com", 2, "Too Salty for me", 3);
+    public void creatRating(String userEmail, int restId, String review, int ratingNum) {
+        Rating rating = new Rating(userEmail, restId, review, ratingNum);
 
         Call<Rating> call = foodAPI.createRating(rating);
 
@@ -363,30 +274,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Rating> call, Response<Rating> response) {
                 if (!response.isSuccessful()) {
-                    textViewResult.setText(response.code());
                     return;
                 }
-
-                Rating rating = response.body();
-
-
-                String content = "";
-                content += response.code() + "\n";
-                content += rating.getId() + "\n";
-                content += rating.getUserEmail() + "\n";
-                content += rating.getRestId() + "\n";
-                content += rating.getReview() + "\n";
-                content += rating.getRating() + "\n\n";
-
-
-                textViewResult.append(content);
-
 
             }
 
             @Override
             public void onFailure(Call<Rating> call, Throwable t) {
-                textViewResult.setText(t.getMessage());
             }
         });
 
@@ -394,7 +288,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //can prob delete all this stuff
     /*
 
     public class JavaInter{

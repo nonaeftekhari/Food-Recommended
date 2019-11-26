@@ -43,7 +43,7 @@
   
       <div class="mySlides1 fade">
           <a href="pizza.html">
-        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar">
+        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar" onclick ="getRestData()" id="piz">
 			</a>
         <a target="_blank" href="file:///android_asset/images/burger.jpg">
             <img src="file:///android_asset/images/burger.jpg" alt="avatar" style="width:65px" class="avatar">
@@ -145,6 +145,11 @@ function showSlides(n, no) {
 
 function goBack() {
   window.history.back()
+}
+
+function getRestData(){
+    document.getElemenyById('').value=stupidObj.getRest();
+
 }
 
 
