@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   <title>Food recommended</title>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="themes/accountinfo.css"/>
+   <script src= "functions.js"></script>
+
+      
+</head>
+
+<body> 
+        <header>
+            <div class="top">
+            <button onclick="goBack()">Previous</button>
+          </div>
+          <div class="top2">
+            <form>
+              <input type="button" value="Log Out" onclick="location.href='login.html'" />
+              </form>
+              </div>
+          </div>
+        </header>
+        <h2>User Information</h2>
+
+        <div class="row">
+          <div class="column">
+            <h2>Profile Overview</h2>
+
+            <!-- record of existing signed user-->
+                <br> Full Name <br>
+            <br>Email</br>
+            </ul> 
+          </div>
+
+          <div class="column">
+            <h2>Recent Activity (Today's date)</h2> 
+          </div>
+        </div>
+    
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+</body>
+</html>
