@@ -26,6 +26,10 @@ public class Rest {
         this.phone = phone;
         this.category = category;
     }
+    
+    public Rest() {
+    	
+    }
 
 
     public void setRestName(String restName) {
@@ -55,22 +59,21 @@ public class Rest {
         }
 
         catch (Exception e){
-            throw new IllegalArgumentException(e);
+            throw new IllegalArgumentException("Incorrect Website");
         }
     }
 
     public void setPhone(double phone) {
-        int length = String.valueOf(phone).length();
 
-        if(length != 10){
-            throw new IllegalArgumentException("Input must be 10 characters: " + zipcode);
+        if(phone >= 9999999999.0){
+            throw new IllegalArgumentException("Input must be a valid phone number: " + phone);
         }
 
-        this.phone = phone
+        this.phone = phone;
     }
 
     public void setCategory(int category) {
-        if(category > 0 && category < 9){
+        if(category >= 0 && category < 9){
             this.category = category;
         }
         else{
@@ -113,4 +116,6 @@ public class Rest {
     public double getRestPrice() {
         return restPrice;
     }
+
+
 }
