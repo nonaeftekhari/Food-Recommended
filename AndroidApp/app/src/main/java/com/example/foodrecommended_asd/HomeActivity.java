@@ -17,12 +17,12 @@ public class HomeActivity extends AppCompatActivity {
                 .withFullScreen()
                 .withTargetActivity(MainActivity.class)
                 .withSplashTimeOut(5000)
-                .withBackgroundColor(Color.parseColor("#1a1b29"))
+                .withBackgroundColor(Color.parseColor("#3498db"))
                 .withHeaderText("")
                 .withFooterText("")
                 .withBeforeLogoText("")
                 .withAfterLogoText("Food Recommended")
-                .withLogo(R.mipmap.ic_launcher_img_foreground);
+                .withLogo(R.mipmap.ic_launcher_test_foreground);
 	// These are getter functions to present the text and logo
         config.getHeaderTextView().setTextColor(Color.WHITE);
         config.getFooterTextView().setTextColor(Color.WHITE);

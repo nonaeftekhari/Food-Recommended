@@ -1,6 +1,7 @@
 package com.example.foodrecommended_asd;
 
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -24,4 +25,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.example.foodrecommended_asd", appContext.getPackageName());
     }
+
 }

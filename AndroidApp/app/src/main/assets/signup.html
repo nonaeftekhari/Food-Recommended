@@ -52,8 +52,6 @@
         var second;
 
     function checkPsw(pass1, pass2) {
-            document.getElementById("marker").value="";
-
         if (AccountMethods.checkPassword(pass1, pass2)){
             document.getElementById("marker").value="";
             second = true;
@@ -65,8 +63,13 @@
 
     function checkEmail(email){
         document.getElementById("marker").value="";
-        AccountMethods.setEmail(email);
-        first = true;
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("em").value)){
+            first = true;
+            AccountMethods.setEmail(email);
+        }
+        else{
+            first = false;
+        }
 
     }
 
