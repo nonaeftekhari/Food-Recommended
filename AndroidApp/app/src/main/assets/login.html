@@ -13,46 +13,56 @@
 
 </head>
 
-<body> 
+<div>
 
 
  <div data-role="page" id="LogIn" data-theme="a">
      <a href="javascript:history.back()">Go Back</a>
      <h1>Welcome Back!</h1>
 
-          <form action="/" method="post">
+          <form name="loginform" onSubmit="return validateForm();" action="location.html" method="post">
           
             <div class="field-wrap">
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="text" name="em" placeholder="email address">
           </div>
-          
+
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="password" name="pword" placeholder="password>
           </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block" onclick="location.href='location.html'">Log In</button>
 
+
+          <button class="button button-block onclick="location.href='location.html'">Log In</button>
+          </div>
           </form>
      <b><center> Don't have an account yet?</center></b>
      <div id="wrapper"></div>
-     <form>
-         <input type="button" value="Sign Up" onclick="location.href='signup.html'" />
+
+     <input type="submit" value="Login"/>
+     </form>
         </div>
-        
-      </div>
-      
-</div> 
-  </div>
-    
-    
+</div>
+
+<script>
+    function validateForm() {
+        var em = document.loginform.em.value;
+        var pw = document.loginform.pword.value;
+        var username = "email";
+        var password = "password";
+        if ((em == email) && (pw == password)) {
+            return true;
+        }
+        else {
+            Android.showMessage("try again");
+            return false;
+        }
+  }
+</script>
 
 	
  </body>
