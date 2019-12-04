@@ -60,3 +60,11 @@ class RatingItem(models.Model):
     def __str__(self):
        return self.userEmail
 
+class RatingResponse(models.Model):
+    ratingId = models.ForeignKey(Rating, on_delete=models.CASCADE)
+    response = models.CharField(max_length=300, null=True)
+
+    def __str__(self):
+       return self.ratingId
+
+
