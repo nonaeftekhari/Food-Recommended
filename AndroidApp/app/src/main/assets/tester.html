@@ -1,0 +1,22 @@
+<html>
+<button onclick="postRestaurantData();">TEST API</button>
+<body>
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script>
+    function postRestaurantData(){
+        var y = RetroExchange.getRestZip(Restaurant.getZip());
+        document.body.innerHTML = DataExchange.printRestList(y);
+
+    }
+
+
+</script>

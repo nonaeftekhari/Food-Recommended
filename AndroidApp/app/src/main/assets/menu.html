@@ -38,8 +38,7 @@
 			</div>
                 <button onclick="goBack()">Go Back </button>
 
-                <button onclick="postRestaurantData()">Try Me</button>
-                <input type="text" id="data" name="data" value="">
+
 
 <div class="slideshow-container">
     <h3> Types of Foods </h3>
@@ -47,8 +46,8 @@
 
   
       <div class="mySlides1 fade">
-          <a href="pizza.html">
-        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar" onclick ="getRestData()" id="piz">
+          <a href="tester.html">
+        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar" onclick ="postRestaurantData()" id="piz">
 			</a>
         <a target="_blank" href="file:///android_asset/images/burger.jpg">
             <img src="file:///android_asset/images/burger.jpg" alt="avatar" style="width:65px" class="avatar">
@@ -117,6 +116,9 @@
                     <div style="text-align:center"> <span class="dot" onclick="currentSlide(1,2)"></span> <span class="dot" onclick="currentSlide(2,2)"></span> <span class="dot" onclick="currentSlide(3,2)"></span> </div>
                 </div>
 
+                <button onclick="postRestaurantData()">Try Me</button>
+                <input type="text" id="data" name="data" value="">
+
 	<script>
 
 
@@ -147,11 +149,11 @@ function showSlides(n, no) {
   x[slideIndex[no]-1].style.display = "block";  
 }
 
-function postRestaurantData(){
-    var x = RetrofitExchange.getRestZip(48201);
-    document.getElementById("data").value= "Hello World";
+    function postRestaurantData(){
+        var y = RetroExchange.getRestZip(48201);
+        document.body.innerHTML= DataExchange.printRestList(y);
 
-}
+    }
 
 
 function goBack() {

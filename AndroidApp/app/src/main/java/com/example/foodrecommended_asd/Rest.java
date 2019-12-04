@@ -76,6 +76,7 @@ public class Rest {
         return restPrice;
     }
 
+    @JavascriptInterface
     public String printRestList(List<Rest> listRest){
         String content = "";
         for (Rest rest : listRest) {

@@ -13,6 +13,8 @@
 
 </head>
 
+
+
 <body> 
  
  <div data-role="page" id="Location" data-theme="b">
@@ -23,8 +25,7 @@
 	</div><!-- /header -->
     <button onclick="showAndroidMessage('Going to Google Maps!'); showGPS()" >Use GPS</button>
 
-     <button onclick="postRestaurantData()">Try Me</button>
-     <input type="text" id="data" name="data" value="">
+
 
     <p id="demo"></p>
 	<div data-role="main" class="ui-content"> 
@@ -34,7 +35,9 @@
 	      <input type="button" value="Continue" onclick="setZipCode();" id="locate"/>
     </center>
 	</div><!-- /content -->
-	
+
+     <button onclick="postRestaurantData();">Try Me</button>
+     <input type="text" id="data" name="data" value="">
   </div><!-- /page -->
 
  <script type="text/javascript">
@@ -53,6 +56,12 @@
         Android.showMessage(Restaurant.getZip());
         location.href="menu.html";
     }
+
+    function postRestaurantData(){
+        var y = RetroExchange.getRestZip(48201);
+        document.getElementById("data").value= DataExchange.printRestList(y);
+
+    }
 </script>
 
   <script>
@@ -70,8 +79,9 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
-</script>    
-    
+
+
+</script>
 
 	
  </body>
