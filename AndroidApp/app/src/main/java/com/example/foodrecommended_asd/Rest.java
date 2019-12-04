@@ -4,6 +4,8 @@ package com.example.foodrecommended_asd;
 import android.graphics.Bitmap;
 import android.webkit.JavascriptInterface;
 
+import java.util.List;
+
 public class Rest {
     private int id;
     private String restName;
@@ -73,4 +75,20 @@ public class Rest {
     public double getRestPrice() {
         return restPrice;
     }
+
+    public String printRestList(List<Rest> listRest){
+        String content = "";
+        for (Rest rest : listRest) {
+
+            content += rest.getId()+ "\n";
+            content += rest.getRestName()+ "\n";
+            content += rest.getCategory()+ "\n";
+            content += rest.getPhone()+ "\n";
+            content += rest.getRestPrice()+ "\n\n";
+
+        }
+        return content;
+    }
+
+
 }

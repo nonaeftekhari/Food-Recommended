@@ -38,8 +38,13 @@
 			</div>
                 <button onclick="goBack()">Go Back </button>
 
+                <button onclick="postRestaurantData()">Try Me</button>
+                <input type="text" id="data" name="data" value="">
+
 <div class="slideshow-container">
     <h3> Types of Foods </h3>
+
+
   
       <div class="mySlides1 fade">
           <a href="pizza.html">
@@ -140,6 +145,12 @@ function showSlides(n, no) {
      x[i].style.display = "none";  
   }
   x[slideIndex[no]-1].style.display = "block";  
+}
+
+function postRestaurantData(){
+    var x = RetrofitExchange.getRestZip(48201);
+    document.getElementById("data").value= "Hello World";
+
 }
 
 

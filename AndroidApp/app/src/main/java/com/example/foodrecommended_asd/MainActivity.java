@@ -2,10 +2,14 @@ package com.example.foodrecommended_asd;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -23,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
     //temp objects
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        RetrofitClass exchange = new RetrofitClass();
+        Rest dataAccessor = new Rest();
 
 
 
@@ -44,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         //List<Rest> testObj;
         //testObj = getRest();
 
-        /*
+
 
 
         // This code below is to add the html file into the app
@@ -55,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         JavaInter javaInterObj = new JavaInter(this);
         AccountSignup exAccount = new AccountSignup();
         Restaurant exRestaurant = new Restaurant();
-        */
+
         WebView view = (WebView) this.findViewById(R.id.webView);
         view.getSettings().setJavaScriptEnabled(true);
         // The browser is what's used to view the webView
@@ -64,17 +71,14 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = browser.getSettings();
         webSettings.setJavaScriptEnabled(true); // Enableing Javascript
 
-        browser.loadUrl("file:///android_asset/menu.html");// The code above is the html file added into the app.
+        browser.loadUrl("file:///android_asset/location.html");// The code above is the html file added into the app.
         browser.getSettings().setJavaScriptEnabled(true);
 
-        //browser.addJavascriptInterface(javaInterObj, "Android");
-        //browser.addJavascriptInterface(exAccount, "AccountMethods");
-        //browser.addJavascriptInterface(exRestaurant, "Restaurant");
-
-
-        //we need to fix that
-        //browser.addJavascriptInterface(testObj, "stupidObj");
-
+        browser.addJavascriptInterface(javaInterObj, "Android");
+        browser.addJavascriptInterface(exAccount, "AccountMethods");
+        browser.addJavascriptInterface(exRestaurant, "Restaurant");
+        browser.addJavascriptInterface(exchange, "RetroExchange");
+        browser.addJavascriptInterface(dataAccessor, "DataExchange");
 
         // Color for background #3498db
 
@@ -83,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*
+
 
     public class JavaInter{
         private String message;
@@ -125,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    */
+
 
 }
 
