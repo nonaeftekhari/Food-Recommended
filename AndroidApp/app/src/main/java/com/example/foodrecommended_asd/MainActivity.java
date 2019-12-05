@@ -11,12 +11,48 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    private WebView testRest;
+
+    //temp objects
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        RetrofitClass exchange = new RetrofitClass();
+        Rest dataAccessor = new Rest();
+
+
+
+        //getRest();
+        //getRestZip(48201);
+        //createRest("Jet's Pizza", 48201, "https://www.jetspizza.com/", 3132977000.0, 0);
+        //getUserID("test@gmail.com");
+        //createUser("jonsmith2@gmail.com", "p@ssw0rd", "jonsmith2");
+        //getItemRest(2);
+        //createItem("Tonkotsu Ramen", "Pork, Noodle, and Green Onion", 4, 11.95);
+        //getRatingRest(2);
+        //creatRating("root@gmail.com", 2, "Too Salty for me", 3);
+
+        //List<Rest> testObj;
+        //testObj = getRest();
+
+
+
 
         // This code below is to add the html file into the app
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -35,16 +71,23 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = browser.getSettings();
         webSettings.setJavaScriptEnabled(true); // Enableing Javascript
 
-        browser.loadUrl("file:///android_asset/index.html");// The code above is the html file added into the app.
+        browser.loadUrl("file:///android_asset/location.html");// The code above is the html file added into the app.
         browser.getSettings().setJavaScriptEnabled(true);
 
         browser.addJavascriptInterface(javaInterObj, "Android");
         browser.addJavascriptInterface(exAccount, "AccountMethods");
         browser.addJavascriptInterface(exRestaurant, "Restaurant");
+        browser.addJavascriptInterface(exchange, "RetroExchange");
+        browser.addJavascriptInterface(dataAccessor, "DataExchange");
 
         // Color for background #3498db
 
-        } // End of MainActivity
+    } // End of MainActivity
+
+
+
+
+
 
     public class JavaInter{
         private String message;
@@ -85,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 }
 

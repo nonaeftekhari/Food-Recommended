@@ -57,6 +57,11 @@ public class AccountSignup {
 
     @JavascriptInterface
     public boolean checkPassword(String pass1, String pass2){
+
+        /*
+        a simple change would be to user .equals()
+        return pass1.equals(pass2)
+         */
         if (pass1.length() == 0 || pass2.length() == 0){
             return false;
         }
