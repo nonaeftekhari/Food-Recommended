@@ -32,7 +32,7 @@
     <center><label for="Zipcode"><p>Enter Zip Code:</p></label></center>
 
 	<center><input type="number" id="Zipcode" name="Zipcode">
-	      <input type="button" value="Continue" onclick="setZipCode();" id="locate"/>
+	      <input type="button" value="Continue" onclick="setZipCode(document.getElementById('Zipcode').value);" id="locate"/>
     </center>
 	</div><!-- /content -->
 
@@ -48,8 +48,8 @@
     }
 
     function setZipCode(zip){
-        if (Restaurant.setZip(document.getElementById('Zipcode').value)){
-            Restaurant.setZip(document.getElementById('Zipcode').value);
+        if (zip.length == 5){
+            Restaurant.setZip(zip);
             Android.showMessage(Restaurant.getZip());
             location.href="menu.html";
         }else{

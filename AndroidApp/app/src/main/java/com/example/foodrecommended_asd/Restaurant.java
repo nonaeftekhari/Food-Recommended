@@ -5,7 +5,7 @@ import android.webkit.JavascriptInterface;
 public class Restaurant {
     private String banner;
     private int id;
-    private String zip;
+    private int zip;
     private double rating;
     private String website;
     private String phoneNumber;
@@ -22,14 +22,9 @@ public class Restaurant {
         this.id = id;
     }
     @JavascriptInterface
-    public boolean setZip(String zip) {
-        if (zip.length() != 5) {
-            return false;
-        }
-        else{
-            this.zip = zip;
-            return true;
-        }
+    public void setZip(String z) {
+        int zipper = Integer.parseInt(z);
+        this.zip = zipper;
     }
     @JavascriptInterface
     public void setRating(double rating) {
@@ -61,7 +56,7 @@ public class Restaurant {
         return id;
     }
     @JavascriptInterface
-    public String getZip() {
+    public int getZip() {
         return zip;
     }
     @JavascriptInterface

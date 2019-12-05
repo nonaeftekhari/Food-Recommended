@@ -13,10 +13,7 @@
 </html>
 <script>
     function postRestaurantData(){
-        var y = RetroExchange.getRestZip(Restaurant.getZip());
-        document.body.innerHTML = DataExchange.printRestList(y);
-
+        document.body.innerHTML = DataExchange.printRestList(RetroExchange.getRestZip(Restaurant.getZip()));
     }
-
 
 </script>
