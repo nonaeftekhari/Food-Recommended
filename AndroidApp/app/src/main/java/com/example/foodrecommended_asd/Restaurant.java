@@ -43,8 +43,9 @@ public class Restaurant {
         this.restaurantPrice = restaurantPrice;
     }
     @JavascriptInterface
-    public void setCategory(int category) {
-        this.category = category;
+    public void setCategory(String category) {
+        int setter = Integer.parseInt(category);
+        this.category = setter;
     }
     // Setter Function above
     @JavascriptInterface

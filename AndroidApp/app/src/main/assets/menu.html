@@ -47,32 +47,32 @@
   
       <div class="mySlides1 fade">
           <a href="tester.html">
-        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar" onclick ="location.href='tester.html'" id="piz">
+        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar" onclick ="categoryGetter(0); location.href='tester.html'" id="piz">
 			</a>
         <a target="_blank" href="file:///android_asset/images/burger.jpg">
-            <img src="file:///android_asset/images/burger.jpg" alt="avatar" style="width:65px" class="avatar">
+            <img src="file:///android_asset/images/burger.jpg" alt="avatar" onclick="categoryGetter(1);" style="width:65px" class="avatar">
           </a>
 
       <a target="_blank" href="file:///android_asset/images/sushi2.jpg">
-            <img src="file:///android_asset/images/sushi2.jpg" alt="avatar" style="width:65px" class="avatar">
+            <img src="file:///android_asset/images/sushi2.jpg" alt="avatar" onclick="categoryGetter(2)" style="width:65px" class="avatar">
       </a>
 
       <a target="_blank" href="file:///android_asset/images/asian2.png">
-          <img src="file:///android_asset/images/asian2.png" alt="avatar" style="width:65px" class="avatar">
+          <img src="file:///android_asset/images/asian2.png" alt="avatar" onclick="categoryGetter(3)" style="width:65px" class="avatar">
       </a>
       </div>
 
       <div class="mySlides1 fade">
       <a target="_blank" href="file:///android_asset/images/italian2.png">
-          <img src="file:///android_asset/images/italian2.png" alt="avatar" style="width:65px" class="avatar">
+          <img src="file:///android_asset/images/italian2.png" alt="avatar" onclick="categoryGetter(4)" style="width:65px" class="avatar">
       </a>
 
       <a target="_blank" href="file:///android_asset/images/maxi.jpg">
-          <img src="file:///android_asset/images/maxi.jpg" alt="avatar" style="width:65px" class="avatar">
+          <img src="file:///android_asset/images/maxi.jpg" alt="avatar" onclick="categoryGetter(5)" style="width:65px" class="avatar">
       </a>
 
       <a target="_blank" href="file:///android_asset/images/donut.png">
-          <img src="file:///android_asset/images/donut.png" alt="avatar" style="width:65px" class="avatar">
+          <img src="file:///android_asset/images/donut.png" alt="avatar" onclick="categoryGetter(6)" style="width:65px" class="avatar">
       </a>
       </div>
     <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a> <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -149,12 +149,6 @@ function showSlides(n, no) {
   x[slideIndex[no]-1].style.display = "block";  
 }
 
-    function postRestaurantData(){
-        var y = RetroExchange.getRestZip(48201);
-        document.body.innerHTML= DataExchange.printRestList(y);
-
-    }
-
 
 function goBack() {
   window.history.back()
@@ -163,6 +157,11 @@ function goBack() {
 function getRestData(){
     document.getElemenyById('').value=stupidObj.getRest();
 
+}
+
+function categoryGetter(cat){
+    Restaurant.setCategory(cat);
+    Android.showMessage(Restaurant.getCategory());
 }
 
 
