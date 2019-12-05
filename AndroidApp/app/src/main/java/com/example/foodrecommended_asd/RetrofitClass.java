@@ -390,13 +390,14 @@ public class RetrofitClass {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
                     return;
+                }else{
+                    User user = response.body();
+                    if(user.getPassword() != password){
+                        return;
+                    }else{
+                        tempBool = true;
+                    }
                 }
-                User user = response.body();
-                if(user.getPassword() != password){
-                    return;
-                }
-
-                tempBool = true;
             }
 
             @Override

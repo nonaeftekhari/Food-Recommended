@@ -80,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="383" column="24" selection-start-line="383" selection-start-column="24" selection-end-line="383" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="394" column="34" lean-forward="true" selection-start-line="394" selection-start-column="34" selection-end-line="394" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#827#828#0" expanded="true" />
@@ -768,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="383" column="24" selection-start-line="383" selection-start-column="24" selection-end-line="383" selection-end-column="24" />
+        <state relative-caret-position="270">
+          <caret line="394" column="34" lean-forward="true" selection-start-line="394" selection-start-column="34" selection-end-line="394" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#827#828#0" expanded="true" />
