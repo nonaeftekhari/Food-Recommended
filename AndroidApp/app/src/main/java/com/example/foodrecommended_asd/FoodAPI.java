@@ -16,7 +16,7 @@ public interface FoodAPI {
     @GET("Rest/Zip/{Zip}/")
     Call<List<Rest>> getRestZip(@Path("Zip") int zip);
 
-    @GET("Rest/Zip/{Zip}/Cat/{Cat}")
+    @GET("Rest/Zip/{Zip}/Cat/{Cat}/")
     Call<List<Rest>> getRestZipCat(@Path("Zip") int zip, @Path("Cat") int cat);
 
     @POST("Rest/")
