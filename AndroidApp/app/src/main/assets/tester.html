@@ -1,7 +1,6 @@
 <html>
 <button onclick="postRestaurantData();">TEST API</button>
-<body>
-
+<body style="background-color:#5aa0c9;">
 
 
 
@@ -12,8 +11,8 @@
 </body>
 </html>
 <script>
-    function postRestaurantData(){
-        document.body.innerHTML = DataExchange.printRestList(RetroExchange.getRestZipCat(Restaurant.getZip(), Restaurant.getCategory()));
-    }
+
+    Android.showMessage("1");
+    document.body.innerHTML = DataExchange.printRestList(RetroExchange.getRestZipCat(Restaurant.getZip(), Restaurant.getCategory()));
 
 </script>

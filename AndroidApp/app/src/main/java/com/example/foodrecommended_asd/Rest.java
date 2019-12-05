@@ -43,7 +43,7 @@ public class Rest {
 
     @JavascriptInterface
     public String getBanner() {
-        return banner;
+        return "http://127.0.0.1:8000/" + banner;
     }
 
     @JavascriptInterface
@@ -81,11 +81,11 @@ public class Rest {
         String content = "";
         for (Rest rest : listRest) {
 
-            content += rest.getId()+ "\n";
-            content += rest.getRestName()+ "\n";
-            content += rest.getCategory()+ "\n";
-            content += rest.getPhone()+ "\n";
-            content += rest.getRestPrice()+ "\n\n";
+            content += "<a href= '" + rest.getWebsite() + "'>";
+
+            content += "<h2>" + rest.getRestName()+ "</h2><p></a>";
+            content += "Rating: " + rest.getRestRating()+ "</p><p>";
+            content += "Price: " + rest.getRestPrice()+ "</p><hr>";
 
         }
         return content;

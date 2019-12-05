@@ -391,6 +391,11 @@ public class RetrofitClass {
     }
 
     @JavascriptInterface
+    public String getRestName(int i){
+        return tempRestList.get(i).getRestName();
+    }
+
+    @JavascriptInterface
     public String getBanner(int i){
         return tempRestList.get(i).getBanner();
     }
