@@ -89,5 +89,31 @@ public class AccountSignup {
         }
     }
 
+    @JavascriptInterface
+    public boolean properPassword(String pass){
+        boolean passing = false;
+        boolean length = false;
+        boolean capital = false;
+
+        for (int i = 0; i < pass.length(); i++){
+            if (pass.charAt(i) >= 65 && pass.charAt(i) <= 95){
+                capital = true;
+            }
+        }
+
+        if (pass.length() <= 50 && pass.length() >= 8){
+            length = true;
+        }
+
+        if (capital == true && length == true){
+            passing = true;
+            return passing;
+        }
+        else{
+            passing = false;
+            return passing;
+        }
+    }
+
 }
 

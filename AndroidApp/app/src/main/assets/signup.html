@@ -64,6 +64,14 @@
             else{
                 second = false;
             }
+
+            if(AccountMethods.properPassword(pass1)){
+                second = true;
+            }
+            else{
+                Android.showMessage("Incorrect Specifications: Need 8 Characters, and a Capital.");
+                second = false;
+            }
         }
 
         function checkEmail(email){
@@ -78,7 +86,6 @@
                 if(RetroExchange.checkUser(AccountMethods.getEmail())){
                     document.getElementById("marker").value="There is already an account created under this email!";
                 }else{
-                    document.getElementById("marker").value=RetroExchange.getUserID("test@gmail.com");
                     RetroExchange.createUser(AccountMethods.getEmail(), AccountMethods.getPassword(), AccountMethods.getName());
                     location.href="location.html";
                 }
