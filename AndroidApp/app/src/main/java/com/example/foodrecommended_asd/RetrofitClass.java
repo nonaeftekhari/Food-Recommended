@@ -28,6 +28,8 @@ public class RetrofitClass {
     private List<Rating> tempRatingList;
     private List<RatingResponse> tempRatingResponse;
     private boolean tempBool;
+    String password;
+    String email;
 
     public List<com.example.foodrecommended_asd.Rest> getTempRestList() {
         return tempRestList;
@@ -160,6 +162,7 @@ public class RetrofitClass {
             }
         });
     }
+
 
     private User getUserID(String userEmail) {
         Call call = foodAPI.getUserID(userEmail);
@@ -335,7 +338,7 @@ public class RetrofitClass {
         return tempRatingResponse;
     }
 
-
+    @JavascriptInterface
     public boolean checkUser(String pk){
         tempBool = false;
 
@@ -357,6 +360,35 @@ public class RetrofitClass {
             }
         });
 
+        return tempBool;
+    }
+    //end of class
+
+
+    @JavascriptInterface
+    public boolean Authenticate() {
+        tempBool = false;
+
+        Call<User> call = foodAPI.getUserID(email);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                User user = response.body();
+                if(user.getPassword() != password){
+                    return;
+                }
+
+                tempBool = true;
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
         return tempBool;
     }
     //end of class
