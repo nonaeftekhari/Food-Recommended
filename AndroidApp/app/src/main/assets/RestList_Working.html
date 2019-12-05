@@ -37,22 +37,8 @@ img {
 <body>
 
     <button onclick="goBack()">Go Back </button>
-<h2>Pizza Places</h2>
 
-<div class="row">
-  <div class="column" style="background-color:#FFFACD;">
-      <!--<a href="https://www.dominos.com/en/"> 
-      <img src="images/crust-pizza.jpg" alt="crust-pizza" align="right">
-      </a>-->
-		
- <h2 id="restaurant">Dominoes</h2>
- <img id="pic" align="right" src="./RestList_Working_files/wave.jpg">
-<script>
-	var rest = "Dominoes";
-	document.getElementById("restaurant").innerHTML = rest;
-</script>
 
-<p>Detroit, MI</p>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
@@ -75,48 +61,32 @@ img {
 </script>
   </div>
   <div class="column" style="background-color:#FFFF00;">
-      <a href="https://www.paulspizza.net/">
-      <img src="" id="paul" alt="test" width="100" height="180" align="right">
-      </a>
-	  <button onclick="secondTester()">TEST IMAGE</button> 
-	  <button onclick="secondTester()">POST IMAGE</button> 
-	  alert.
-      
-    <h2>Paul's Pizza</h2>
-    <p>Detroit, MI</p>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star"></span>
-  </div>
-  
-  <div class="column" style="background-color:#FFA500;">
-      <a href="https://www.amiccispizza.com/"> 
-      <img src="" alt="Smiley face" align="right">
-      </a>
-    <h2>Amicci's Pizza</h2>
-    <p>Hamtramck, MI</p>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star"></span>
-  </div>
 
-    <div class="column" style="background-color:#FFD700;">
-        <a href="https://www.buddyspizza.com/"> 
-      <img src="" alt="Smiley face" align="right">
-      </a>
-    <h2>Buddy's Pizza</h2>
-    <p>Detroit, MI</p>
+      <div id="myHTMLWrapper">
+      </div>
+
+      <script>
+        var wrapper = document.getElementById("myHTMLWrapper");
+        var myHTML = '';
+
+  for (var i = 0; i < 10; i++) {
+        myHTML += '<a href="https://www.paulspizza.net/"><img src="" id="paul" alt="test" width="100" height="180" align="right"></a>';
+        myHTML += '<h2>Pauls Pizza</h2><p>Detroit, MI</p>';
+        myHTML += '<p>Rating: 4.0</p><p>Price: 13.50</p><hr>';
+  }
+    wrapper.innerHTML = myHTML
+
+      </script>
+
+
+
+
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
     <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    
-</div>
+    <span class="fa fa-star"></span>
+  </div>
 
 <script>
 function goBack() {
@@ -124,19 +94,4 @@ function goBack() {
 } 
 	</script>
 
-
-
-
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
 </div></body></html>
