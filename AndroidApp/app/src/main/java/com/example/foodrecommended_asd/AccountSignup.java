@@ -6,6 +6,7 @@ public class AccountSignup {
     private String password;
     private String checkPass;
     private String email;
+    private String name;
 
     private String[] AccInfo = new String[2];
 
@@ -19,26 +20,37 @@ public class AccountSignup {
         email = e;
     }
 
-    String getEmail(){
+    @JavascriptInterface
+    public String getEmail(){
         return email;
     }
 
     @JavascriptInterface
     public void setEmail(String e){
+        e.toLowerCase();
         email = e;
     }
 
-    String getPassword(){
+    @JavascriptInterface
+    public String getPassword(){
         return password;
     }
 
-    void setPassword(String pass){
+    @JavascriptInterface
+    public void setPassword(String pass){
         password = pass;
     }
 
-    void setCheckPass(String pass){
+    @JavascriptInterface
+    public void setCheckPass(String pass){
         checkPass = pass;
     }
+
+    @JavascriptInterface
+    public void setName(String n){ name = n;}
+
+    @JavascriptInterface
+    public String getName(){return name;}
 
     @JavascriptInterface
     public String getCheckPass(){
@@ -50,13 +62,19 @@ public class AccountSignup {
         AccInfo[1] = password;
     }
 
-    void addInfoToDB(){
+    void addInfoToDB(String em, String pass){
 
 
     }
 
+
     @JavascriptInterface
     public boolean checkPassword(String pass1, String pass2){
+
+        /*
+        a simple change would be to user .equals()
+        return pass1.equals(pass2)
+         */
         if (pass1.length() == 0 || pass2.length() == 0){
             return false;
         }
@@ -68,6 +86,32 @@ public class AccountSignup {
             }
             this.password = pass1;
             return true;
+        }
+    }
+
+    @JavascriptInterface
+    public boolean properPassword(String pass){
+        boolean passing = false;
+        boolean length = false;
+        boolean capital = false;
+
+        for (int i = 0; i < pass.length(); i++){
+            if (pass.charAt(i) >= 65 && pass.charAt(i) <= 95){
+                capital = true;
+            }
+        }
+
+        if (pass.length() <= 50 && pass.length() >= 8){
+            length = true;
+        }
+
+        if (capital == true && length == true){
+            passing = true;
+            return passing;
+        }
+        else{
+            passing = false;
+            return passing;
         }
     }
 

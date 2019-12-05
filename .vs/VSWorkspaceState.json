@@ -5,6 +5,6 @@
     "\\FoodAPI\\AppAPI",
     "\\FoodAPI\\FoodAPI"
   ],
-  "SelectedNode": "\\FoodAPI\\FoodAPI\\settings.py",
+  "SelectedNode": "\\FoodAPI\\AppAPI\\views.py",
   "PreviewInSolutionExplorer": false
 }

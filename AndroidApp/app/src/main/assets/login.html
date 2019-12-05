@@ -19,27 +19,23 @@
     <a href="javascript:history.back()">Go Back</a>
     <h1>Welcome Back!</h1>
 
-    <form name="login">
-
         <div class="field-wrap">
             <label>
                 Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off" name = "em"/>
+            <input type="email"required autocomplete="off" name = "em" id= "em"/>
         </div>
 
         <div class="field-wrap">
             <label>
                 Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off" name= "pswrd"/>
+            <input type="password"required autocomplete="off" name= "pswrd" id="pswrd"/>
         </div>
 
         <input type="reset" value="Cancel"/>
 
-        <input type="button" onclick="check(this.form)" value="Login"/>
-
-    </form>
+        <input type="button" onclick="check(document.getElementById('em').value, document.getElementById('pswrd').value);" value="Login"/>
 
     <b><center> Don't have an account yet?</center></b>
     <div id="wrapper"></div>
@@ -51,17 +47,22 @@
 </div>
 
 <script language="javascript">
-function check(form)/*checking email & password*/
+function check(email, password)/*checking email & password*/
 {
 
- if(form.em.value == "myemail" && form.pswrd.value == "mypswrd")
+if(email == "" && password == ""){
+    Android.showMessage("Error: Incorrect Email or Password");
+}
+else{
+  if(RetroExchange.Authenticate(email,password))
   {
     location.href="location.html";
   }
  else
  {
-     Android.showMessage("Error Password or Username");
-  }
+     Android.showMessage("Error: Incorrect Email or Password");
+ }
+}
 }
 </script>
 

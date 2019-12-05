@@ -50,3 +50,21 @@ class Rating(models.Model):
     def __str__(self):
        return self.review
     
+class RatingItem(models.Model):
+    userEmail = models.ForeignKey(User, on_delete=models.CASCADE) # removed , related_name='+'
+    restId =  models.ForeignKey(Rest, on_delete=models.CASCADE) # removed , related_name='+'
+    itemId =  models.ForeignKey(Item, on_delete=models.CASCADE)
+    review = models.CharField(max_length=300, null=True)
+    rating = models.PositiveIntegerField()
+
+    def __str__(self):
+       return self.userEmail
+
+class RatingResponse(models.Model):
+    ratingId = models.ForeignKey(Rating, on_delete=models.CASCADE)
+    response = models.CharField(max_length=300, null=True)
+
+    def __str__(self):
+       return self.ratingId
+
+

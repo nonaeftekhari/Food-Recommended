@@ -30,7 +30,11 @@
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
               <a href="menu.html">Home</a>
               <a href="items.html">Menu</a>
-            </div>
+              <a href="RestReview.html">Review Restaurant</a>
+              <a href="ItemReview.html">Review Item</a>
+              <a href="RestResponse.html">Respond to Comment</a>
+
+          </div>
 					
 			<div id="myDropdown" class="dropdown-content">
 				<a href="accountinfo.html">Account Information</a>
@@ -38,37 +42,41 @@
 			</div>
                 <button onclick="goBack()">Go Back </button>
 
+
+
 <div class="slideshow-container">
     <h3> Types of Foods </h3>
+
+
   
       <div class="mySlides1 fade">
-          <a href="pizza.html">
-        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar">
+          <a href="RestReview.html">
+        <img src="file:///android_asset/images/pizza.jpg" alt="Pizza" style="width:65px" class="avatar" onclick ="categoryGetter(0); location.href='RestList_Working.html';" id="piz">
 			</a>
-        <a target="_blank" href="file:///android_asset/images/burger.jpg">
-            <img src="file:///android_asset/images/burger.jpg" alt="avatar" style="width:65px" class="avatar">
+        <a target="_blank" href="tester.html">
+            <img src="file:///android_asset/images/burger.jpg" alt="avatar" onclick="categoryGetter(1);" style="width:65px" class="avatar">
           </a>
 
-      <a target="_blank" href="file:///android_asset/images/sushi2.jpg">
-            <img src="file:///android_asset/images/sushi2.jpg" alt="avatar" style="width:65px" class="avatar">
+      <a target="_blank" href="tester.html">
+            <img src="file:///android_asset/images/sushi2.jpg" alt="avatar" onclick="categoryGetter(2)" style="width:65px" class="avatar">
       </a>
 
-      <a target="_blank" href="file:///android_asset/images/asian2.png">
-          <img src="file:///android_asset/images/asian2.png" alt="avatar" style="width:65px" class="avatar">
+      <a target="_blank" href="tester.html">
+          <img src="file:///android_asset/images/asian2.png" alt="avatar" onclick="categoryGetter(3)" style="width:65px" class="avatar">
       </a>
       </div>
 
       <div class="mySlides1 fade">
-      <a target="_blank" href="file:///android_asset/images/italian2.png">
-          <img src="file:///android_asset/images/italian2.png" alt="avatar" style="width:65px" class="avatar">
+      <a target="_blank" href="tester.html">
+          <img src="file:///android_asset/images/italian2.png" alt="avatar" onclick="categoryGetter(4)" style="width:65px" class="avatar">
       </a>
 
-      <a target="_blank" href="file:///android_asset/images/maxi.jpg">
-          <img src="file:///android_asset/images/maxi.jpg" alt="avatar" style="width:65px" class="avatar">
+      <a target="_blank" href="tester.html">
+          <img src="file:///android_asset/images/maxi.jpg" alt="avatar" onclick="categoryGetter(5)" style="width:65px" class="avatar">
       </a>
 
-      <a target="_blank" href="file:///android_asset/images/donut.png">
-          <img src="file:///android_asset/images/donut.png" alt="avatar" style="width:65px" class="avatar">
+      <a target="_blank" href="tester.html">
+          <img src="file:///android_asset/images/donut.png" alt="avatar" onclick="categoryGetter(6)" style="width:65px" class="avatar">
       </a>
       </div>
     <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a> <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
@@ -112,6 +120,9 @@
                     <div style="text-align:center"> <span class="dot" onclick="currentSlide(1,2)"></span> <span class="dot" onclick="currentSlide(2,2)"></span> <span class="dot" onclick="currentSlide(3,2)"></span> </div>
                 </div>
 
+                <button onclick="postRestaurantData()">Try Me</button>
+                <input type="text" id="data" name="data" value="">
+
 	<script>
 
 
@@ -145,6 +156,10 @@ function showSlides(n, no) {
 
 function goBack() {
   window.history.back()
+}
+
+function categoryGetter(cat){
+    Restaurant.setCategory(cat);
 }
 
 

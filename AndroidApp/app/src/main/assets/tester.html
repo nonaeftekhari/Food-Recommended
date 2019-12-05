@@ -1,0 +1,33 @@
+<html>
+<button onclick="goBack()">Go Back </button>
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>
+<body style="background-color:#5aa0c9;">
+
+<div id="myHTMLWrapper">
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script>
+    var wrapper = document.getElementById("myHTMLWrapper");
+    var myHTML = '';
+
+    myHTML += DataExchange.printRestList(RetroExchange.getRestZipCat(Restaurant.getZip(), Restaurant.getCategory()));
+
+    wrapper.innerHTML = myHTML;
+
+
+
+</script>
+

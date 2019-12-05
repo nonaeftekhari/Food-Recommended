@@ -13,6 +13,8 @@
 
 </head>
 
+
+
 <body> 
  
  <div data-role="page" id="Location" data-theme="b">
@@ -23,16 +25,16 @@
 	</div><!-- /header -->
     <button onclick="showAndroidMessage('Going to Google Maps!'); showGPS()" >Use GPS</button>
 
+
+
     <p id="demo"></p>
 	<div data-role="main" class="ui-content"> 
     <center><label for="Zipcode"><p>Enter Zip Code:</p></label></center>
 
 	<center><input type="number" id="Zipcode" name="Zipcode">
-	      <input type="button" value="Continue" onclick="setZipCode();" id="locate"/>
+	      <input type="button" value="Continue" onclick="setZipCode(document.getElementById('Zipcode').value);" id="locate"/>
     </center>
 	</div><!-- /content -->
-	
-  </div><!-- /page -->
 
  <script type="text/javascript">
     function showAndroidMessage(toast) {
@@ -46,10 +48,18 @@
     }
 
     function setZipCode(zip){
-        Restaurant.setZip(document.getElementById("Zipcode").value);
-        Android.showMessage(Restaurant.getZip());
-        location.href="menu.html";
+        if (zip.length == 5){
+            Restaurant.setZip(zip);
+            Android.showMessage(Restaurant.getZip());
+            location.href="menu.html";
+        }else{
+            Android.showMessage("Incorrect Zip - Try Again.");
+            Restaurant.setZip("");
+        }
+
+
     }
+
 </script>
 
   <script>
@@ -67,9 +77,10 @@ function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
-</script>    
-    
 
-	
+
+    </script>
+
+ </div>
  </body>
 </html>

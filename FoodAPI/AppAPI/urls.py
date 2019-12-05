@@ -9,6 +9,9 @@ router.register('Rest', views.restView)
 router.register('User', views.userView)
 router.register('Item', views.itemView)
 router.register('Rating', views.ratingView)
+router.register('RatingItem', views.ratingItemView)
+router.register('RatingResponse', views.ratingResponseView)
+
 
 
 #all custom url endpoints
@@ -22,6 +25,7 @@ urlpatterns = [
     path('User/ID/<str:pk>/', views.userID),
     path('Rating/Rest/<int:restId>/', views.ratingRest),
     path('Rating/User/<str:userEmail>/', views.ratingUser),
+    path('RatingResponse/Rating/<int:ratingId>/', views.ratingResponseID)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Food recommended</title>
+  <title>Food Recommended</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="my-custom-theme.min.css" />
@@ -17,13 +17,12 @@
     <div data-role="page" id="SignUp" data-theme="a">
   <div class="container">
       <a href="javascript:history.back()">Go Back</a>
-    <h1>Sign Up</h1>
-    <p>Please fill in this form to create an account.</p>
+    <h1>Sign Up</h1> <div align= "left"><input type="checkbox" name="owner" value="Owner of a Restaurant?" ><br>Owner of Restaurant?</div>
     <hr>
       <form action="/" method="post">
 
 	<label for="FullName"><b>Full Name</b></label>
-    <input type="text" placeholder="Enter Full Name" name="FullName" required>
+    <input type="text" placeholder="Enter Full Name" name="FullName" id="name" required>
 
       <div class="field-wrap">
           <label>
@@ -40,53 +39,66 @@
 
       <input type="text" id="marker" name="marker" value="">
 
-    <div class="clearfix">
+          <div class="clearfix">
       <button type="button" class="cancelbutn">Cancel</button>
-        <button class="button button-block" onclick="checkEmail(document.getElementById('em')); checkPsw(document.getElementById('pass1').value,getElementById('pass2').value); testFields();">Register</button>
+        <!-- <button class="button button-block" onclick="checkEmail(document.getElementById('em').value); checkPsw(document.getElementById('pass1').value,getElementById('pass2').value); testFields();">Register</button> -->
+              <input type="button" value="Register" onclick="checkEmail(document.getElementById('em').value); checkPsw(document.getElementById('pass1').value,getElementById('pass2').value); testFields();" />
     </div>
-  </div>
         
 </form>
+
+
         <script type="text/javascript">
         var first;
         var second;
 
-    function checkPsw(pass1, pass2) {
+        function checkPsw(pass1, pass2) {
             document.getElementById("marker").value="";
 
-        if (AccountMethods.checkPassword(pass1, pass2)){
+            if(AccountMethods.checkPassword(pass1, pass2)){
+                document.getElementById("marker").value="";
+                second = true;
+                AccountMethods.setPassword(pass1);
+            }
+            else{
+                second = false;
+            }
+
+            if(AccountMethods.properPassword(pass1)){
+                second = true;
+            }
+            else{
+                Android.showMessage("Incorrect Specifications: Need 8 Characters, and a Capital.");
+                second = false;
+            }
+        }
+
+        function checkEmail(email){
             document.getElementById("marker").value="";
-            second = true;
-        }
-        else{
-            second = false;
-        }
-    }
-
-    function checkEmail(email){
-        document.getElementById("marker").value="";
-        AccountMethods.setEmail(email);
-        first = true;
-
-    }
-
-    function testFields(){
-        if (first == true && second == true ){
-           location.href="location.html";
-        }
-        else if (first != true){
-           document.getElementById("marker").value="Incorrect Email, try again!";
-        }
-        else{
-            document.getElementById("marker").value="Incorrect Passwords, try again!";
+            AccountMethods.setEmail(email);
+            first = true;
         }
 
-
-    }
-
-</script>
+        function testFields(){
+            if (first == true && second == true ){
+                AccountMethods.setName(document.getElementById("name").value);
+                if(RetroExchange.checkUser(AccountMethods.getEmail())){
+                    document.getElementById("marker").value="There is already an account created under this email!";
+                }else{
+                    RetroExchange.createUser(AccountMethods.getEmail(), AccountMethods.getPassword(), AccountMethods.getName());
+                    location.href="location.html";
+                }
+            }
+            else if (first != true){
+                document.getElementById("marker").value="Incorrect Email, try again!";
+            }
+            else{
+                document.getElementById("marker").value="Incorrect Passwords, try again!";
+            }
+        }
+        </script>
 
 </div>
 	
- </body>
+</body>
 </html>

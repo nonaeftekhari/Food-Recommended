@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<button onclick="goBack()">Go Back </button>
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body style="background-color:#5aa0c9;">
+
+<h2>Submit Item Review</h2>
+
+<form action="menu.html">
+  Item ID:<br>
+  <input type="number" name="ItemID" value="">
+  <br>
+  Review:<br>
+  <textarea rows="5" cols="50" name="Description"
+                            id="Description" name="Review"></textarea> 
+  <br>
+  Rating:<br>
+  <input type="number" name="Rating" value="" min="1" max="5">
+  <br>
+  
+  <br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+</body>
+</html>
