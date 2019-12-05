@@ -16,6 +16,9 @@ public interface FoodAPI {
     @GET("Rest/Zip/{Zip}/")
     Call<List<Rest>> getRestZip(@Path("Zip") int zip);
 
+    @GET("Rest/Zip/{Zip}/Cat/{Cat}")
+    Call<List<Rest>> getRestZipCat(@Path("Zip") int zip, @Path("Cat") int cat);
+
     @POST("Rest/")
     Call<Rest> createRest(@Body Rest rest);
 
@@ -36,4 +39,10 @@ public interface FoodAPI {
 
     @POST("Rating/")
     Call<Rating> createRating(@Body Rating rating);
+
+    @GET("RatingResponse/Rating/{id}/")
+    Call<List<RatingResponse>> getRatingResponseId(@Path("id") int ID);
+
+    @POST("RatingResponse/")
+    Call<RatingResponse> createRatingResponse(@Body RatingResponse ratingResponse);
 }
