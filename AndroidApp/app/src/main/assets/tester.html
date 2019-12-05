@@ -1,6 +1,13 @@
 <html>
-<button onclick="postRestaurantData();">TEST API</button>
+<button onclick="goBack()">Go Back </button>
+<script>
+    function goBack() {
+        window.history.back()
+    }
+</script>
 <body style="background-color:#5aa0c9;">
+
+
 
 
 
@@ -11,8 +18,7 @@
 </body>
 </html>
 <script>
-
-    Android.showMessage("1");
     document.body.innerHTML = DataExchange.printRestList(RetroExchange.getRestZipCat(Restaurant.getZip(), Restaurant.getCategory()));
 
 </script>
+

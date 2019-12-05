@@ -14,8 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="275d2d4a-a6e3-47e9-b615-5b4dc9dc5120" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/RestList_Working.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/RestList_Working.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/tester.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/tester.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-424">
+            <state relative-caret-position="-238">
               <caret line="50" column="53" lean-forward="true" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -93,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1059">
-              <caret line="80" column="28" lean-forward="true" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+            <state relative-caret-position="-97">
+              <caret line="389" column="27" selection-start-line="389" selection-start-column="27" selection-end-line="389" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#889#890#0" expanded="true" />
@@ -115,16 +116,21 @@
                 <element signature="e#9391#9392#0" expanded="true" />
                 <element signature="e#10490#10491#0" expanded="true" />
                 <element signature="e#10536#10537#0" expanded="true" />
+                <element signature="e#10735#10736#0" expanded="true" />
+                <element signature="e#10777#10778#0" expanded="true" />
+                <element signature="e#10839#10840#0" expanded="true" />
+                <element signature="e#10893#10894#0" expanded="true" />
+                <element signature="e#10955#10956#0" expanded="true" />
+                <element signature="e#11013#11014#0" expanded="true" />
+                <element signature="e#11084#11085#0" expanded="true" />
+                <element signature="e#11141#11142#0" expanded="true" />
+                <element signature="e#11204#11205#0" expanded="true" />
+                <element signature="e#11259#11260#0" expanded="true" />
+                <element signature="e#11314#11315#0" expanded="true" />
+                <element signature="e#11364#11365#0" expanded="true" />
+                <element signature="e#11423#11424#0" expanded="true" />
+                <element signature="e#11476#11477#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -132,15 +138,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+            <state relative-caret-position="264">
+              <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="60" />
               <folding>
                 <element signature="e#1664#1682#0" expanded="true" />
-                <element signature="e#1954#1972#0" expanded="true" />
-                <element signature="e#2182#2200#0" expanded="true" />
-                <element signature="e#2404#2422#0" expanded="true" />
-                <element signature="e#2678#2696#0" expanded="true" />
-                <element signature="e#2896#2914#0" expanded="true" />
+                <element signature="e#1965#1983#0" expanded="true" />
+                <element signature="e#2193#2211#0" expanded="true" />
+                <element signature="e#2415#2433#0" expanded="true" />
+                <element signature="e#2689#2707#0" expanded="true" />
+                <element signature="e#2907#2925#0" expanded="true" />
                 <element signature="e#3116#3134#0" expanded="true" />
               </folding>
             </state>
@@ -150,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="-884">
               <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
             </state>
           </provider>
@@ -189,11 +195,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/tester.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="137" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="137" />
+            <state relative-caret-position="85">
+              <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              <folding>
+                <element signature="e#78#111#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/assets/my-custom-theme.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/MapsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,19 +236,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/RestList_Working.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+            <state relative-caret-position="392">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
-                <element signature="e#1579#1612#0" expanded="true" />
+                <element signature="e#820#821#0" expanded="true" />
+                <element signature="e#845#846#0" expanded="true" />
+                <element signature="e#905#906#0" expanded="true" />
+                <element signature="e#936#937#0" expanded="true" />
+                <element signature="e#994#995#0" expanded="true" />
+                <element signature="e#1050#1051#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
+                <element signature="e#1136#1137#0" expanded="true" />
+                <element signature="e#1198#1199#0" expanded="true" />
+                <element signature="e#1231#1232#0" expanded="true" />
+                <element signature="e#1288#1289#0" expanded="true" />
+                <element signature="e#1319#1320#0" expanded="true" />
+                <element signature="e#1378#1379#0" expanded="true" />
+                <element signature="e#1408#1409#0" expanded="true" />
+                <element signature="e#1463#1464#0" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1584#1585#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -268,7 +302,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/JavaInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/location.html" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Restaurant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/FoodAPI.java" />
@@ -276,9 +309,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/AccountSignup.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/signup.html" />
         <option value="$PROJECT_DIR$/app/src/main/assets/login.html" />
-        <option value="$PROJECT_DIR$/app/src/main/assets/tester.html" />
-        <option value="$PROJECT_DIR$/app/src/main/assets/menu.html" />
         <option value="$PROJECT_DIR$/app/src/main/assets/RestList_Working.html" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/menu.html" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/tester.html" />
       </list>
     </option>
   </component>
@@ -330,36 +364,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
               <item name="images" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FoodRecommended-ASD" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="FoodRecommended-ASD" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="FoodRecommended-ASD" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="FoodRecommended-ASD" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="FoodRecommended-ASD" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="ic_launcher" type="c431d0b8:AndroidResGroupNode" />
             </path>
           </expand>
           <select />
@@ -491,7 +495,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5018587" side_tool="true" weight="0.21543624" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49814126" visible="true" weight="0.22818792" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49814126" visible="true" weight="0.22818792" />
       <window_info id="Favorites" order="2" sideWeight="0.50144094" side_tool="true" weight="0.21543624" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -499,8 +503,8 @@
       <window_info id="Resources Explorer" order="6" weight="0.3295302" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Structure" order="8" weight="0.020134227" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" sideWeight="0.9147651" visible="true" weight="0.31367293" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49798658" weight="0.30229226" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.9147651" weight="0.31367293" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49798658" visible="true" weight="0.3016086" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49932885" weight="0.3286119" />
@@ -563,9 +567,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/images/bu.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/my-custom-theme.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/google_maps_api.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml">
@@ -641,12 +642,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/images/tester.html" />
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/index.html">
@@ -723,7 +724,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/MapsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="68">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -733,7 +734,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-424">
+        <state relative-caret-position="-238">
           <caret line="50" column="53" lean-forward="true" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -743,8 +744,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1059">
-          <caret line="80" column="28" lean-forward="true" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+        <state relative-caret-position="-97">
+          <caret line="389" column="27" selection-start-line="389" selection-start-column="27" selection-end-line="389" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#889#890#0" expanded="true" />
@@ -765,6 +766,20 @@
             <element signature="e#9391#9392#0" expanded="true" />
             <element signature="e#10490#10491#0" expanded="true" />
             <element signature="e#10536#10537#0" expanded="true" />
+            <element signature="e#10735#10736#0" expanded="true" />
+            <element signature="e#10777#10778#0" expanded="true" />
+            <element signature="e#10839#10840#0" expanded="true" />
+            <element signature="e#10893#10894#0" expanded="true" />
+            <element signature="e#10955#10956#0" expanded="true" />
+            <element signature="e#11013#11014#0" expanded="true" />
+            <element signature="e#11084#11085#0" expanded="true" />
+            <element signature="e#11141#11142#0" expanded="true" />
+            <element signature="e#11204#11205#0" expanded="true" />
+            <element signature="e#11259#11260#0" expanded="true" />
+            <element signature="e#11314#11315#0" expanded="true" />
+            <element signature="e#11364#11365#0" expanded="true" />
+            <element signature="e#11423#11424#0" expanded="true" />
+            <element signature="e#11476#11477#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,8 +824,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="392">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
+            <element signature="e#905#906#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+            <element signature="e#994#995#0" expanded="true" />
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1198#1199#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+            <element signature="e#1378#1379#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,42 +856,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/tester.html">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/RestList_Working.html" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="137" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="137" />
+        <state relative-caret-position="-884">
+          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/my-custom-theme.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+        <state relative-caret-position="264">
+          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="60" />
           <folding>
             <element signature="e#1664#1682#0" expanded="true" />
-            <element signature="e#1954#1972#0" expanded="true" />
-            <element signature="e#2182#2200#0" expanded="true" />
-            <element signature="e#2404#2422#0" expanded="true" />
-            <element signature="e#2678#2696#0" expanded="true" />
-            <element signature="e#2896#2914#0" expanded="true" />
+            <element signature="e#1965#1983#0" expanded="true" />
+            <element signature="e#2193#2211#0" expanded="true" />
+            <element signature="e#2415#2433#0" expanded="true" />
+            <element signature="e#2689#2707#0" expanded="true" />
+            <element signature="e#2907#2925#0" expanded="true" />
             <element signature="e#3116#3134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/tester.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/RestList_Working.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+        <state relative-caret-position="85">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding>
-            <element signature="e#1579#1612#0" expanded="true" />
+            <element signature="e#78#111#0" expanded="true" />
           </folding>
         </state>
       </provider>

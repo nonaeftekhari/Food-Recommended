@@ -81,6 +81,7 @@ public class Rest {
         String content = "";
         for (Rest rest : listRest) {
 
+
             content += "<a href= '" + rest.getWebsite() + "'>";
 
             content += "<h2>" + rest.getRestName()+ "</h2><p></a>";
