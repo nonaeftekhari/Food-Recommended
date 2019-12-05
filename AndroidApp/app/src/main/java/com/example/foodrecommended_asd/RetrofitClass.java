@@ -77,65 +77,6 @@ public class RetrofitClass {
 
 
     @JavascriptInterface
-    public List<Rest> getRest() {
-        tempRestList = null;
-        Call<List<Rest>> call = foodAPI.getRests();
-
-        call.enqueue(new Callback<List<Rest>>() {
-            @Override
-            public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
-                if (!response.isSuccessful()) {
-                    return;
-                }
-                tempRestList = response.body();
-            }
-
-            @Override
-            public void onFailure(Call<List<Rest>> call, Throwable t) {
-
-            }
-        });
-
-        return tempRestList;
-    }
-
-    @JavascriptInterface
-    public List<Rest> getRestZip(int zip) {
-        tempRestList = null;
-        running = false;
-        Call<List<Rest>> call = foodAPI.getRestZip(zip);
-
-        call.enqueue(new Callback<List<Rest>>() {
-            @Override
-            public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
-                if (!response.isSuccessful()) {
-                    Log.e("1", "loop");
-                    running = true;
-                }
-                else {
-                    Log.e("2", "loop");
-                    tempRestList = response.body();
-                    running = true;
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Rest>> call, Throwable t) {
-                running = true;
-            }
-        });
-        //Log.e("before loop", "loop");
-        while(0==0){
-            //Log.e("In loop", "loop");
-            if(running){
-                break;
-            }
-        }
-        //Log.e("returning", "here");
-        return tempRestList;
-    }
-
-    @JavascriptInterface
     public List<Rest> getRestZipCat(int zip, int cat) {
         tempRestList = null;
         running = false;
@@ -145,10 +86,8 @@ public class RetrofitClass {
             @Override
             public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
                 if (!response.isSuccessful()) {
-                    Log.e("1","1");
                     running = true;
                 }else {
-                    Log.e("2","2");
                     tempRestList = response.body();
                     running = true;
                 }
@@ -159,18 +98,17 @@ public class RetrofitClass {
                 running = true;
             }
         });
-        Log.e("before loop", "loop");
         while(0==0){
-            Log.e("In loop", "loop");
             if(running){
                 break;
             }
         }
-        Log.e("returning", "here");
         return tempRestList;
     }
 
-    private void createRest(String restName, int zipcode, String website, long phone, int category) {
+
+    @JavascriptInterface
+    public void createRest(String restName, int zipcode, String website, long phone, int category) {
         Rest rest = new Rest(restName, zipcode, website, phone, category);
 
         Call<Rest> call = foodAPI.createRest(rest);
@@ -189,31 +127,6 @@ public class RetrofitClass {
 
             }
         });
-    }
-
-    @JavascriptInterface
-    public User getUserID(String userEmail) {
-        tempUser = null;
-        Call call = foodAPI.getUserID(userEmail);
-
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (!response.isSuccessful()) {
-                    return;
-                }
-
-                tempUser = response.body();
-
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-
-            }
-        });
-
-        return tempUser;
     }
 
     @JavascriptInterface
@@ -243,24 +156,31 @@ public class RetrofitClass {
     @JavascriptInterface
     public List<Item> getItemRest(int id) {
         tempRestList = null;
+        running = false;
         Call<List<Item>> call = foodAPI.getItemRest(id);
 
         call.enqueue(new Callback<List<Item>>() {
             @Override
             public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
                 if (!response.isSuccessful()) {
-                    return;
+                    running = true;
                 }
 
                 tempItemList = response.body();
+                running = true;
 
             }
 
             @Override
             public void onFailure(Call<List<Item>> call, Throwable t) {
+                running = true;
             }
         });
-
+        while(0==0) {
+            if (running) {
+                break;
+            }
+        }
         return tempItemList;
     }
 
@@ -289,23 +209,30 @@ public class RetrofitClass {
     @JavascriptInterface
     public List<Rating> getRatingRest(int id) {
         tempRestList = null;
+        running = false;
+
         Call<List<Rating>> call = foodAPI.getRatingRest(id);
 
         call.enqueue(new Callback<List<Rating>>() {
             @Override
             public void onResponse(Call<List<Rating>> call, Response<List<Rating>> response) {
                 if (!response.isSuccessful()) {
-                    return;
+                    running = true;
                 }
                 tempRatingList = response.body();
+                running = true;
             }
 
             @Override
             public void onFailure(Call<List<Rating>> call, Throwable t) {
-
+                running = true;
             }
         });
-
+        while(0==0) {
+            if (running) {
+                break;
+            }
+        }
         return tempRatingList;
     }
 
@@ -357,28 +284,38 @@ public class RetrofitClass {
     @JavascriptInterface
     public List<RatingResponse> getRatingResponse(int id){
         tempRatingList = null;
+        running = false;
+
         Call<List<RatingResponse>> call = foodAPI.getRatingResponseId(id);
 
         call.enqueue(new Callback<List<RatingResponse>>() {
             @Override
             public void onResponse(Call<List<RatingResponse>> call, Response<List<RatingResponse>> response) {
                 if (!response.isSuccessful()) {
-                    return;
+                    running = true;
                 }
                 tempRatingResponse = response.body();
+                running = true;
+
             }
 
             @Override
             public void onFailure(Call<List<RatingResponse>> call, Throwable t) {
-
+                running = true;
             }
         });
+        while(0==0) {
+            if (running) {
+                break;
+            }
+        }
         return tempRatingResponse;
     }
 
     @JavascriptInterface
     public boolean checkUser(String pk){
         tempBool = false;
+        running = false;
 
         Call<User> call = foodAPI.getUserID(pk);
 
@@ -386,22 +323,25 @@ public class RetrofitClass {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
-                    return;
+                    running = true;
                 }else{
                     tempBool = true;
+                    running = true;
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+                running = true;
             }
         });
-
+        while(0==0) {
+            if (running) {
+                break;
+            }
+        }
         return tempBool;
     }
-    //end of class
-
 
     @JavascriptInterface
     public boolean Authenticate(final String email1, String pass) {
@@ -440,7 +380,8 @@ public class RetrofitClass {
             if(running){
                 break;
             }
-        }return tempBool;
+        }
+        return tempBool;
 
     }
 
