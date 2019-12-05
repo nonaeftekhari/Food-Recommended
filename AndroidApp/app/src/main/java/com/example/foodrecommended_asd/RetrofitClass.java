@@ -102,24 +102,36 @@ public class RetrofitClass {
     @JavascriptInterface
     public List<Rest> getRestZip(int zip) {
         tempRestList = null;
+        running = false;
         Call<List<Rest>> call = foodAPI.getRestZip(zip);
 
         call.enqueue(new Callback<List<Rest>>() {
             @Override
             public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
                 if (!response.isSuccessful()) {
-                    return;
+                    Log.e("1", "loop");
+                    running = true;
                 }
-
-                tempRestList = response.body();
-
+                else {
+                    Log.e("2", "loop");
+                    tempRestList = response.body();
+                    running = true;
+                }
             }
 
             @Override
             public void onFailure(Call<List<Rest>> call, Throwable t) {
-
+                running = true;
             }
         });
+        //Log.e("before loop", "loop");
+        while(0==0){
+            //Log.e("In loop", "loop");
+            if(running){
+                break;
+            }
+        }
+        //Log.e("returning", "here");
         return tempRestList;
     }
 
@@ -412,9 +424,8 @@ public class RetrofitClass {
             }
         });
 
-        Log.e("got to", "loop");
+
         while(0==0){
-            Log.e("running","in loop");
             if(running){
                 break;
             }
