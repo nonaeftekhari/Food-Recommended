@@ -1,5 +1,6 @@
 package com.example.foodrecommended_asd;
 
+import android.content.Context;
 import android.webkit.JavascriptInterface;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -135,13 +137,16 @@ public class RetrofitClass {
         });
     }
 
-    private User getUserID(String userEmail) {
+    @JavascriptInterface
+    public User getUserID(String userEmail) {
         Call call = foodAPI.getUserID(userEmail);
 
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
+                    String message = "Email already exists.";
+                    Context jContext;
 
                     return;
                 }
@@ -159,7 +164,8 @@ public class RetrofitClass {
         return tempUser;
     }
 
-    private void createUser(String userEmail, String password, String name) {
+    @JavascriptInterface
+    public void createUser(String userEmail, String password, String name) {
         User user = new User(userEmail, password, name);
 
         Call<User> call = foodAPI.createUser(user);
@@ -182,7 +188,8 @@ public class RetrofitClass {
 
     }
 
-    private List<Item> getItemRest(int id) {
+    @JavascriptInterface
+    public List<Item> getItemRest(int id) {
         Call<List<Item>> call = foodAPI.getItemRest(id);
 
         call.enqueue(new Callback<List<Item>>() {
@@ -204,6 +211,7 @@ public class RetrofitClass {
         return tempItemList;
     }
 
+    @JavascriptInterface
     public void createItem(String itemName, String description, int restId, double itemPrice) {
         Item item = new Item(itemName, description, restId, itemPrice);
 
@@ -225,6 +233,7 @@ public class RetrofitClass {
         });
     }
 
+    @JavascriptInterface
     public List<Rating> getRatingRest(int id) {
         Call<List<Rating>> call = foodAPI.getRatingRest(id);
 
@@ -246,6 +255,7 @@ public class RetrofitClass {
         return tempRatingList;
     }
 
+    @JavascriptInterface
     public void creatRating(String userEmail, int restId, String review, int ratingNum) {
         Rating rating = new Rating(userEmail, restId, review, ratingNum);
 

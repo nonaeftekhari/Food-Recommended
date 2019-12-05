@@ -22,8 +22,14 @@ public class Restaurant {
         this.id = id;
     }
     @JavascriptInterface
-    public void setZip(String zip) {
-        this.zip = zip;
+    public boolean setZip(String zip) {
+        if (zip.length() != 5) {
+            return false;
+        }
+        else{
+            this.zip = zip;
+            return true;
+        }
     }
     @JavascriptInterface
     public void setRating(double rating) {

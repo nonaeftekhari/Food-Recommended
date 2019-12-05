@@ -6,6 +6,7 @@ public class AccountSignup {
     private String password;
     private String checkPass;
     private String email;
+    private String name;
 
     private String[] AccInfo = new String[2];
 
@@ -19,26 +20,37 @@ public class AccountSignup {
         email = e;
     }
 
-    String getEmail(){
+    @JavascriptInterface
+    public String getEmail(){
         return email;
     }
 
     @JavascriptInterface
     public void setEmail(String e){
+        e.toLowerCase();
         email = e;
     }
 
-    String getPassword(){
+    @JavascriptInterface
+    public String getPassword(){
         return password;
     }
 
-    void setPassword(String pass){
+    @JavascriptInterface
+    public void setPassword(String pass){
         password = pass;
     }
 
-    void setCheckPass(String pass){
+    @JavascriptInterface
+    public void setCheckPass(String pass){
         checkPass = pass;
     }
+
+    @JavascriptInterface
+    public void setName(String n){ name = n;}
+
+    @JavascriptInterface
+    public String getName(){return name;}
 
     @JavascriptInterface
     public String getCheckPass(){
@@ -50,10 +62,11 @@ public class AccountSignup {
         AccInfo[1] = password;
     }
 
-    void addInfoToDB(){
+    void addInfoToDB(String em, String pass){
 
 
     }
+
 
     @JavascriptInterface
     public boolean checkPassword(String pass1, String pass2){

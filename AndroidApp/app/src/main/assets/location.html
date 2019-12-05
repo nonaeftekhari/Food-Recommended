@@ -36,10 +36,6 @@
     </center>
 	</div><!-- /content -->
 
-     <button onclick="postRestaurantData();">Try Me</button>
-     <input type="text" id="data" name="data" value="">
-  </div><!-- /page -->
-
  <script type="text/javascript">
     function showAndroidMessage(toast) {
         document.getElementById("Zipcode").value=Android.zipForm();
@@ -52,16 +48,18 @@
     }
 
     function setZipCode(zip){
-        Restaurant.setZip(document.getElementById("Zipcode").value);
-        Android.showMessage(Restaurant.getZip());
-        location.href="menu.html";
+        if (Restaurant.setZip(document.getElementById('Zipcode').value)){
+            Restaurant.setZip(document.getElementById('Zipcode').value);
+            Android.showMessage(Restaurant.getZip());
+            location.href="menu.html";
+        }else{
+            Android.showMessage("Incorrect Zip - Try Again.");
+            Restaurant.setZip("");
+        }
+
+
     }
 
-    function postRestaurantData(){
-        var y = RetroExchange.getRestZip(48201);
-        document.getElementById("data").value= DataExchange.printRestList(y);
-
-    }
 </script>
 
   <script>
@@ -81,8 +79,8 @@ function showPosition(position) {
 }
 
 
-</script>
+    </script>
 
-	
+ </div>
  </body>
 </html>
