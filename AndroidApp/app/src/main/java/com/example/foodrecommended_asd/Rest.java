@@ -82,7 +82,6 @@ public class Rest {
         for (Rest rest : listRest) {
 
             content += "<a href= '" + rest.getWebsite() + "'>";
-
             content += "<h2>" + rest.getRestName()+ "</h2><p></a>";
             content += "Rating: " + rest.getRestRating()+ "</p><p>";
             content += "Price: " + rest.getRestPrice()+ "</p><hr>";
