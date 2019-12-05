@@ -379,7 +379,9 @@ public class RetrofitClass {
 
 
     @JavascriptInterface
-    public boolean Authenticate() {
+    public boolean Authenticate(String email1, String pass) {
+        email = email1;
+        password = pass;
         tempBool = false;
 
         Call<User> call = foodAPI.getUserID(email);
