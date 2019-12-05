@@ -385,6 +385,44 @@ public class RetrofitClass {
 
     }
 
+    @JavascriptInterface
+    public int getRestListLeng(){
+        return tempRestList.size();
+    }
+
+    @JavascriptInterface
+    public String getBanner(int i){
+        return tempRestList.get(i).getBanner();
+    }
+
+    @JavascriptInterface
+    public double getRating(int i){
+        return tempRestList.get(i).getRestRating();
+    }
+
+    @JavascriptInterface
+    public double getRestaurantPrice(int i){
+        return tempRestList.get(i).getRestPrice();
+    }
+
+    @JavascriptInterface
+    public String getWebsite(int i){
+        return tempRestList.get(i).getWebsite();
+    }
+
+    @JavascriptInterface
+    public int getId(int i){
+        return tempRestList.get(i).getId();
+    }
+
+    @JavascriptInterface
+    public Long getPhone(int i){
+        return tempRestList.get(i).getPhone();
+    }
+
+
+
+
 
     //end of class
 }
