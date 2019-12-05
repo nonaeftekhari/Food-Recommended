@@ -76,6 +76,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public List<Rest> getRest() {
+        tempRestList = null;
         Call<List<Rest>> call = foodAPI.getRests();
 
         call.enqueue(new Callback<List<Rest>>() {
@@ -98,6 +99,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public List<Rest> getRestZip(int zip) {
+        tempRestList = null;
         Call<List<Rest>> call = foodAPI.getRestZip(zip);
 
         call.enqueue(new Callback<List<Rest>>() {
@@ -121,6 +123,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public List<Rest> getRestZipCat(int zip, int cat) {
+        tempRestList = null;
         Call<List<Rest>> call = foodAPI.getRestZipCat(zip, cat);
 
         call.enqueue(new Callback<List<Rest>>() {
@@ -165,6 +168,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public User getUserID(String userEmail) {
+        tempUser = null;
         Call call = foodAPI.getUserID(userEmail);
 
         call.enqueue(new Callback<User>() {
@@ -213,6 +217,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public List<Item> getItemRest(int id) {
+        tempRestList = null;
         Call<List<Item>> call = foodAPI.getItemRest(id);
 
         call.enqueue(new Callback<List<Item>>() {
@@ -258,6 +263,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public List<Rating> getRatingRest(int id) {
+        tempRestList = null;
         Call<List<Rating>> call = foodAPI.getRatingRest(id);
 
         call.enqueue(new Callback<List<Rating>>() {
@@ -325,6 +331,7 @@ public class RetrofitClass {
 
     @JavascriptInterface
     public List<RatingResponse> getRatingResponse(int id){
+        tempRatingList = null;
         Call<List<RatingResponse>> call = foodAPI.getRatingResponseId(id);
 
         call.enqueue(new Callback<List<RatingResponse>>() {
