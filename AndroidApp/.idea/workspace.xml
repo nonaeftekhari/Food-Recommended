@@ -14,10 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="275d2d4a-a6e3-47e9-b615-5b4dc9dc5120" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_16_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_16_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_maps_16_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_16_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FoodAPI/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../FoodAPI/db.sqlite3" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,16 +88,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="362" lean-forward="true" selection-start-line="362" selection-end-line="362" />
+            <state relative-caret-position="107">
+              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
-                <element signature="e#959#960#0" expanded="true" />
-                <element signature="e#1164#1165#0" expanded="true" />
-                <element signature="e#1195#1196#0" expanded="true" />
-                <element signature="e#1388#1389#0" expanded="true" />
-                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#862#863#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1098#1099#0" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1326#1327#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="46" column="86" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="86" />
+            <state relative-caret-position="328">
+              <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -125,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
-              <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+              <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -138,7 +143,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/tester.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="64" lean-forward="true" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+              <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -246,7 +251,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Rest.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/menu.html" />
         <option value="$PROJECT_DIR$/app/src/main/assets/tester.html" />
-        <option value="$PROJECT_DIR$/app/src/main/assets/login.html" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/JavaInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Restaurant.java" />
@@ -254,10 +258,11 @@
         <option value="$PROJECT_DIR$/app/src/main/assets/location.html" />
         <option value="$PROJECT_DIR$/app/src/main/assets/signup.html" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/login.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="980" />
@@ -687,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="86" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/AccountSignup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -755,33 +753,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="362" lean-forward="true" selection-start-line="362" selection-end-line="362" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1423#1424#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/tester.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="64" lean-forward="true" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
+          <caret line="16" column="64" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
-          <caret line="77" column="41" lean-forward="true" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
         </state>
       </provider>
     </entry>
