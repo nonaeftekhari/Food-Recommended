@@ -6,16 +6,19 @@ help them decided where they want to eat tonight. We want to accomplish this thr
 of getting the user to finding their desired restaurant.
 
 
-# Requirements
-  1) Download Python
-  2) Using Git Bash:
-      Use the commands: 
-     
-     - pip install django 
-                     
-     - pip install djangorestframework
-     
-     - pip install Pillow
+# Purpose
+
+Provide the most information possible for a user to help narrow their decisions down. A new platform that doesn't provide any bias towards the restaurants, but rather just information provided by other users and ratings. 
+
+
+# Contributors 
   
-  Downloading Python and the libraries above give you the necessary frameworks to run a REST API.
-  
+1. Maximillian Hendricks
+
+2. Nadia Chowdhury
+
+3. Collin Heck
+
+4. Zachary Taylor
+
+
