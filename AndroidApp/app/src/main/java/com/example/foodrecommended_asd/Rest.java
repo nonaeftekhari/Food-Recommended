@@ -80,8 +80,6 @@ public class Rest {
     public String printRestList(List<Rest> listRest){
         String content = "";
         for (Rest rest : listRest) {
-
-
             content += "<a href= '" + rest.getWebsite() + "'>";
             content += "<h2>" + rest.getRestName()+ "</h2><p></a>";
             content += "Rating: " + rest.getRestRating()+ "</p><p>";
