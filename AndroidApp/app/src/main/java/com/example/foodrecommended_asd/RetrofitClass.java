@@ -1,5 +1,6 @@
 package com.example.foodrecommended_asd;
 
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class RetrofitClass {
     private boolean tempBool;
     String password;
     String email;
+    private boolean running = false;
 
     public List<com.example.foodrecommended_asd.Rest> getTempRestList() {
         return tempRestList;
@@ -379,33 +381,47 @@ public class RetrofitClass {
 
 
     @JavascriptInterface
-    public boolean Authenticate(String email1, String pass) {
+    public boolean Authenticate(final String email1, String pass) {
         email = email1;
         password = pass;
         tempBool = false;
-
+        running = false;
         Call<User> call = foodAPI.getUserID(email);
+
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
-                    return;
+
+                    running = true;
                 }else{
                     User user = response.body();
-                    if(user.getPassword() != password){
-                        return;
+                    String userEmailTemp = user.getPassword();
+                    if(!userEmailTemp.equals(password)){
+                        running = true;
                     }else{
                         tempBool = true;
+                        running = true;
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+                running = true;
             }
         });
-        return tempBool;
+
+        Log.e("got to", "loop");
+        while(0==0){
+            Log.e("running","in loop");
+            if(running){
+                break;
+            }
+        }return tempBool;
+
     }
+
+
     //end of class
 }
