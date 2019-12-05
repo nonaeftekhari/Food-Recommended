@@ -75,7 +75,7 @@
         function testFields(){
             if (first == true && second == true ){
                 AccountMethods.setName(document.getElementById("name").value);
-                if(RetroExchange.getUserID(AccountMethods.getEmail())){
+                if(RetroExchange.checkUser(AccountMethods.getEmail())){
                     document.getElementById("marker").value="There is already an account created under this email!";
                 }else{
                     document.getElementById("marker").value=RetroExchange.getUserID("test@gmail.com");

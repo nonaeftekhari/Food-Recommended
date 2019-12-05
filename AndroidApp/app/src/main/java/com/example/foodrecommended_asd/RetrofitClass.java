@@ -1,10 +1,5 @@
 package com.example.foodrecommended_asd;
 
-<<<<<<< HEAD
-import android.content.Context;
-=======
-import android.os.RecoverySystem;
->>>>>>> 99041909fade26534bd9bc309975728a0f717245
 import android.webkit.JavascriptInterface;
 
 import java.util.List;
@@ -174,9 +169,6 @@ public class RetrofitClass {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (!response.isSuccessful()) {
-                    String message = "Email already exists.";
-                    Context jContext;
-
                     return;
                 }
 
@@ -307,6 +299,7 @@ public class RetrofitClass {
 
     }
 
+    @JavascriptInterface
     public void creatRatingResponse(int id, String response) {
         RatingResponse ratingResponse = new RatingResponse(id, response);
 
@@ -328,6 +321,7 @@ public class RetrofitClass {
         });
     }
 
+    @JavascriptInterface
     public List<RatingResponse> getRatingResponse(int id){
         Call<List<RatingResponse>> call = foodAPI.getRatingResponseId(id);
 
@@ -348,7 +342,7 @@ public class RetrofitClass {
         return tempRatingResponse;
     }
 
-
+    @JavascriptInterface
     public boolean checkUser(String pk){
         tempBool = false;
 
