@@ -1,6 +1,10 @@
 package com.example.foodrecommended_asd;
 
+<<<<<<< HEAD
 import android.content.Context;
+=======
+import android.os.RecoverySystem;
+>>>>>>> 99041909fade26534bd9bc309975728a0f717245
 import android.webkit.JavascriptInterface;
 
 import java.util.List;
@@ -27,6 +31,8 @@ public class RetrofitClass {
     private User tempUser;
     private List<Item> tempItemList;
     private List<Rating> tempRatingList;
+    private List<RatingResponse> tempRatingResponse;
+    private boolean tempBool;
 
     public List<com.example.foodrecommended_asd.Rest> getTempRestList() {
         return tempRestList;
@@ -96,6 +102,29 @@ public class RetrofitClass {
     @JavascriptInterface
     public List<Rest> getRestZip(int zip) {
         Call<List<Rest>> call = foodAPI.getRestZip(zip);
+
+        call.enqueue(new Callback<List<Rest>>() {
+            @Override
+            public void onResponse(Call<List<Rest>> call, Response<List<Rest>> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+
+                tempRestList = response.body();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Rest>> call, Throwable t) {
+
+            }
+        });
+        return tempRestList;
+    }
+
+    @JavascriptInterface
+    public List<Rest> getRestZipCat(int zip, int cat) {
+        Call<List<Rest>> call = foodAPI.getRestZipCat(zip, cat);
 
         call.enqueue(new Callback<List<Rest>>() {
             @Override
@@ -277,4 +306,71 @@ public class RetrofitClass {
 
 
     }
+
+    public void creatRatingResponse(int id, String response) {
+        RatingResponse ratingResponse = new RatingResponse(id, response);
+
+        Call<RatingResponse> call = foodAPI.createRatingResponse(ratingResponse);
+
+        call.enqueue(new Callback<RatingResponse>() {
+            @Override
+            public void onResponse(Call<RatingResponse> call, Response<RatingResponse> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<RatingResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public List<RatingResponse> getRatingResponse(int id){
+        Call<List<RatingResponse>> call = foodAPI.getRatingResponseId(id);
+
+        call.enqueue(new Callback<List<RatingResponse>>() {
+            @Override
+            public void onResponse(Call<List<RatingResponse>> call, Response<List<RatingResponse>> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                tempRatingResponse = response.body();
+            }
+
+            @Override
+            public void onFailure(Call<List<RatingResponse>> call, Throwable t) {
+
+            }
+        });
+        return tempRatingResponse;
+    }
+
+
+    public boolean checkUser(String pk){
+        tempBool = false;
+
+        Call<User> call = foodAPI.getUserID(pk);
+
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }else{
+                    tempBool = true;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
+
+        return tempBool;
+    }
+    //end of class
 }

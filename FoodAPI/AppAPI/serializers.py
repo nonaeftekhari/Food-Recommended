@@ -30,3 +30,8 @@ class ratingItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = RatingItem
         fields = ['id', 'userEmail', 'restId', 'itemId', 'review', 'rating'] 
+
+class ratingResponseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RatingResponse
+        fields = ['id', 'ratingId', 'response'] 

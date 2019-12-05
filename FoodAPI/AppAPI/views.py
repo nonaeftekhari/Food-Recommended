@@ -29,6 +29,9 @@ class ratingItemView(viewsets.ModelViewSet):
     queryset = RatingItem.objects.all()
     serializer_class = ratingItemSerializer
 
+class ratingResponseView(viewsets.ModelViewSet):
+    queryset = RatingResponse.objects.all()
+    serializer_class = ratingResponseSerializer
 
 #pull info on a single rest by pk
 @csrf_exempt
@@ -144,6 +147,21 @@ def ratingUser(request, userEmail):
 
     if request.method == 'GET':
         serializer = ratingSerializer(ratingObj, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+    else:
+        return HttpResponse(status=404)
+
+#get any response to ratings
+@csrf_exempt
+def ratingResponseID(request, ratingId):
+    try:
+        responseObj = RatingResponse.objects.filter(ratingId=ratingId)
+    except responseObj.DoesNotExist:
+        return HttpResponse(status=404)
+
+    if request.method == 'GET':
+        serializer = ratingResponseSerializer(responseObj, many=True)
         return JsonResponse(serializer.data, safe=False)
 
     else:
