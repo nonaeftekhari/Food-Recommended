@@ -50,7 +50,11 @@
 function check(email, password)/*checking email & password*/
 {
 
- if(RetroExchange.Authenticate(email,password))
+if(email == "" && password == ""){
+    Android.showMessage("Error: Incorrect Email or Password");
+}
+else{
+  if(RetroExchange.Authenticate(email,password))
   {
     location.href="location.html";
   }
@@ -58,6 +62,7 @@ function check(email, password)/*checking email & password*/
  {
      Android.showMessage("Error: Incorrect Email or Password");
  }
+}
 }
 </script>
 

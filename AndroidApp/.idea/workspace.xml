@@ -15,8 +15,6 @@
   <component name="ChangeListManager">
     <list default="true" id="275d2d4a-a6e3-47e9-b615-5b4dc9dc5120" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/src/main/assets/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/AccountSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/AccountSignup.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -121,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="58" column="62" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
+            <state relative-caret-position="477">
+              <caret line="53" column="62" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -148,11 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+            <state relative-caret-position="327">
+              <caret line="89" column="50" lean-forward="true" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -160,7 +158,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
+            <state relative-caret-position="276">
               <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
               <folding>
                 <element signature="e#1664#1682#0" expanded="true" />
@@ -269,9 +267,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/Restaurant.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/FoodAPI.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/RetrofitClass.java" />
-        <option value="$PROJECT_DIR$/app/src/main/assets/login.html" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/foodrecommended_asd/AccountSignup.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/signup.html" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/login.html" />
       </list>
     </option>
   </component>
@@ -455,6 +453,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5018587" side_tool="true" weight="0.21543624" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49814126" visible="true" weight="0.22818792" />
@@ -692,17 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="e#1664#1682#0" expanded="true" />
-            <element signature="e#1935#1953#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/tester.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -717,13 +705,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="58" column="62" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -813,8 +794,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+        <state relative-caret-position="327">
+          <caret line="89" column="50" lean-forward="true" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+          <folding>
+            <element signature="e#1664#1682#0" expanded="true" />
+            <element signature="e#1935#1953#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="53" column="62" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
         </state>
       </provider>
     </entry>
