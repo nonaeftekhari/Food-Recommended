@@ -11,4 +11,4 @@ before_install:
    - ls -la
    - chmod +x /.gradlew
 script:
-    - ./gradlew test build connectedCheck --status --stacktrace
+    - ./gradlew androidTestImplementation
