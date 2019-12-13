@@ -11,4 +11,4 @@ before_install:
    - ls -la
    - chmod +x gradlew
 script:
-    - ./gradlew androidTestImplementation
+    - ./Food-Recommended/AndroidApp/app/build.gradle androidTestImplementation
