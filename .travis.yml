@@ -9,6 +9,6 @@ android:
 before_install:
    - pwd
    - ls -la
-   - chmod +x /.gradlew
+   - chmod +x gradlew
 script:
     - ./gradlew androidTestImplementation
