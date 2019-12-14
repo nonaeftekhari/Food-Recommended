@@ -13,11 +13,11 @@ public class Rest {
     private int zipcode;
     private double restRating;
     private String website;
-    private double phone;
+    private Long phone;
     private double restPrice;
     private int category;
 
-    public Rest(String restName, int zipcode, String website, double phone, int category) {
+    public Rest(String restName, int zipcode, String website, Long phone, int category) {
         this.restName = restName;
         //this.banner = banner;
         //find out how to post images with piccaso
@@ -63,7 +63,7 @@ public class Rest {
         }
     }
 
-    public void setPhone(double phone) {
+    public void setPhone(Long phone) {
 
         if(phone >= 9999999999.0){
             throw new IllegalArgumentException("Input must be a valid phone number: " + phone);
@@ -109,7 +109,7 @@ public class Rest {
         return website;
     }
 
-    public double getPhone() {
+    public Long getPhone() {
         return phone;
     }
 

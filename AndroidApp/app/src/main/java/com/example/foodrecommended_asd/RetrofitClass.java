@@ -108,7 +108,7 @@ public class RetrofitClass {
 
 
     @JavascriptInterface
-    public void createRest(String restName, int zipcode, String website, long phone, int category) {
+    public void createRest(String restName, int zipcode, String website, Long phone, int category) {
         Rest rest = new Rest(restName, zipcode, website, phone, category);
 
         Call<Rest> call = foodAPI.createRest(rest);
