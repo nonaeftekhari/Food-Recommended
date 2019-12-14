@@ -1,15 +1,12 @@
 language: android
-sudo: required
-jdk: oraclejdk8
 android:
   components:
-    - build-tools-29.0.2
-    - android-28
-    
+    - tools # to get the new `repository-11.xml`
+    - tools # see https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
+    - platform-tools
+    - build-tools-27.0.3
+    - android-27
 before_install:
-   - pwd
-   - cd ./AndroidApp/app/
-   - pwd
-   - chmod +x gradlew
+  - yes | sdkmanager "platforms;android-27"
 script:
-    - ./gradlew test --stacktrace
+   - ./gradlew build connectedCheck
