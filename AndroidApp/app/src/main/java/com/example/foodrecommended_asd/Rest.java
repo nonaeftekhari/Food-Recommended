@@ -1,10 +1,10 @@
 package com.example.foodrecommended_asd;
+import java.net.URL;
+import java.util.Locale;
 
 
 import android.graphics.Bitmap;
-import android.webkit.JavascriptInterface;
-
-import java.util.List;
+import android.icu.util.ULocale;
 
 public class Rest {
     private int id;
@@ -13,15 +13,11 @@ public class Rest {
     private int zipcode;
     private double restRating;
     private String website;
-    private long phone;
+    private double phone;
     private double restPrice;
     private int category;
 
-
-    public Rest() {
-    }
-
-    public Rest(String restName, int zipcode, String website, long phone, int category) {
+    public Rest(String restName, int zipcode, String website, double phone, int category) {
         this.restName = restName;
         //this.banner = banner;
         //find out how to post images with piccaso
@@ -30,63 +26,95 @@ public class Rest {
         this.phone = phone;
         this.category = category;
     }
+    
+    public Rest() {
+    	
+    }
 
-    @JavascriptInterface
+
+    public void setRestName(String restName) {
+        if(restName.length()>50){
+            throw new IllegalArgumentException("Input must be 50 or less characters: " + restName.length());
+        }
+        this.restName = restName;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
+    }
+
+    public void setZipcode(int zipcode) {
+        int length = String.valueOf(zipcode).length();
+
+        if(length != 5){
+            throw new IllegalArgumentException("Input must be 5 characters: " + zipcode);
+        }
+        this.zipcode = zipcode;
+    }
+
+    public void setWebsite(String website) {
+        try{
+            new URL(website).toURI();
+            this.website = website;
+        }
+
+        catch (Exception e){
+            throw new IllegalArgumentException("Incorrect Website");
+        }
+    }
+
+    public void setPhone(double phone) {
+
+        if(phone >= 9999999999.0){
+            throw new IllegalArgumentException("Input must be a valid phone number: " + phone);
+        }
+
+        this.phone = phone;
+    }
+
+    public void setCategory(int category) {
+        if(category >= 0 && category < 9){
+            this.category = category;
+        }
+        else{
+            throw new IllegalArgumentException("Input must be between 0 and 8 characters: " + category);
+        }
+    }
+
     public int getId() {
         return id;
     }
 
-    @JavascriptInterface
     public String getRestName() {
         return restName;
     }
 
-    @JavascriptInterface
     public String getBanner() {
-        return "http://127.0.0.1:8000/" + banner;
+        return banner;
     }
 
-    @JavascriptInterface
     public int getZipcode() {
         return zipcode;
     }
 
-    @JavascriptInterface
     public double getRestRating() {
         return restRating;
     }
 
-    @JavascriptInterface
     public int getCategory() {
         return category;
     }
 
-    @JavascriptInterface
     public String getWebsite() {
         return website;
     }
 
-    @JavascriptInterface
-    public long getPhone() {
+    public double getPhone() {
         return phone;
     }
 
-    @JavascriptInterface
     public double getRestPrice() {
         return restPrice;
-    }
-
-    @JavascriptInterface
-    public String printRestList(List<Rest> listRest){
-        String content = "";
-        for (Rest rest : listRest) {
-            content += "<a href= '" + rest.getWebsite() + "'>";
-            content += "<h2>" + rest.getRestName()+ "</h2><p></a>";
-            content += "Rating: " + rest.getRestRating()+ "</p><p>";
-            content += "Price: " + rest.getRestPrice()+ "</p><hr>";
-
-        }
-        return content;
     }
 
 
